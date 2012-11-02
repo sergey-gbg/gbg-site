@@ -1,0 +1,803 @@
+/* Style sheet! */
+
+/*### GLOBAL ATTRIBUTES ###*/
+*{
+    margin:0;
+    padding:0;
+}
+
+h1, h2, h3, h4, h5, h6, p
+{ 
+    margin: 0; 
+    padding: 0;  
+    border: 0;  
+    outline: 0;  
+    font-size: 100%;  
+    font-weight: normal;  
+    background: transparent;   
+    display: inline;
+}
+
+a 
+{
+	text-decoration: none;
+	border: 0px;
+	color: #66cc66;
+	border-bottom: 0px dashed;
+	background-color: #FCFCF8;
+	outline: 0;
+}
+
+img 
+{
+    border: none;
+}
+
+body {
+	background-color: #333;
+	font-family: 'Abel', serif;
+	/*background-image:url('../images/Sky_017.jpg');*/	
+}
+
+.container {
+    width: 1025px;
+    background-color: #FCFCF8;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #ccc;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 15px 0px 0px;
+    position: relative;   
+        
+}
+
+/* ######### LEFT PAGE ##########*/
+.left 
+{
+    margin: 0px 20px 0px 0px;
+    width: 342px;
+    float:left;
+    background-color: #FCFCF8;
+    border-right: 0px solid #d7d7d7;
+    border-bottom: 0px solid #d7d7d7;
+    height: 100%;   
+}
+
+.square1
+{
+    overflow: auto;
+    width:325px;
+    height:200px;
+    margin: 15px auto 0px auto;     
+    
+    border-bottom: 0px solid #d7d7d7;    
+}
+
+.square2
+{
+    width:325px;
+    height:235px;
+    margin: 1px auto 0px auto;   
+    padding-bottom: 7px;
+    border-bottom: 0px solid #d7d7d7;    
+}
+
+.square3
+{
+    overflow: auto;
+    width:325px;
+    height:230px;
+    margin: 20px auto 0px auto;    
+}
+
+
+/* ######### HOME SQUARE ##########*/
+.name
+{text-decoration: none;
+border-bottom: none;
+    text-align: center;
+    height: 50px;
+    margin: 30px auto 0px auto;   
+}
+
+.estab
+{
+    font-size: 16px;
+    color: #666;
+    font-family: georgia;
+    font-style: italic;
+    margin: 25px 0px 0px 0px;
+    text-align: center;
+}
+
+
+/* ######### MENU SQUARE ##########*/
+.menu {
+	margin: 5px 10px 5px 15px;
+	display:block;
+	font-style: italic;
+	font-family: georgia;
+	/*background-image: url("../images/paperbg4.jpg");*/
+	color: #666;
+	
+}
+	
+.menu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+    BORDER:0;
+}
+
+.menu li {	
+
+	display: block;
+   border: 1px dashed #ccc;
+	
+margin: 10px 5px 20px 35px;
+padding: 8px 5px 8px 5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+   
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.menu li:hover {	
+
+	display: block;
+	background-color: #EBEBD2;
+	
+}
+
+.menu a {	
+	
+	
+	color: #666;	
+	background-color: #fcfcf8;
+
+    font-style: italic;
+    font-size: 16px;
+ 
+   
+   
+   
+}
+
+.menu a:hover {
+	background-color: #EBEBD2;
+}
+
+
+/* ######### HOTLINKS SQUARE ##########*/
+.hotlinks
+{
+    width: 72px;
+    margin: 15px 0px 0px 54px;
+    padding: 0px 0px 0px 0px;
+    float: left;
+     border-left: 1px dashed #CCC; 
+    border-right: 1px dashed #CCC;     
+}
+
+.imghov
+{
+    width:50px;
+    height:50px;
+    float: left;
+    margin: 0px 0px 0px 12px;
+}
+
+#twithov
+{
+    background-image: url("../images/twithov.png");    
+}
+
+#twithov:hover
+{
+    background-position: 0px -50px;   
+}
+
+#fbhov
+{
+    background-image: url("../images/fbhovv.png");    
+}
+
+#fbhov:hover
+{
+    background-position: 0px -50px;   
+}
+
+#mailhov
+{
+    background-image: url("../images/mailhov.png");    
+}
+
+#mailhov:hover
+{
+    background-position: 0px -80px;   
+}
+
+.twit-image
+{
+    margin: 0px 0px 0px 0px;
+}
+
+.contact
+{
+    margin: 0px 0px 0px 33px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: georgia;
+    color: #666;
+    text-align: right;
+    float: left;
+}
+
+span.phone
+{
+    display: block;
+    margin: 36px 0px 0px 0px;
+    text-align: left;
+    font-size: 20px;
+    color: #666;    
+}
+
+span.town
+{
+    display: block;
+    margin: 10px 0px 0px 0px;
+    text-align: left;
+    color: #999;
+    font-style: normal;
+}
+
+span.email
+{
+    display: block;
+    margin: 10px 0px 0px 0px;
+    text-align: left;
+    color: #999;
+}
+
+span.email a:hover
+{
+    color: #65cdff;
+    text-decoration: underline;
+}
+
+
+/* ######### RIGHT PAGE ##########*/
+.right_header
+{
+    float: right;
+    margin: 15px 10px 0px 0px;
+}
+
+img.login
+{
+    margin: 0px 11px 15px 0px;
+}
+
+#logina
+{
+    background-color: #fcfcf8;
+    margin: 25px 60px 15px 40px;
+    font-style: italic;
+    font-size: 16px;
+    padding: 3px 8px 3px 6px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    float: left;
+}
+
+#logina:hover
+{
+    background-color: #EBEBD2;
+}
+
+img.logo 
+{
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    width: 50px;
+    float: left;
+}
+
+.right
+{
+    margin: 18px 0px 0px 0px;
+    background-color: #FCFCF8;   
+    width: 660px;
+    /*height: 629px;*/
+    float: left;
+    padding: 0px 0px 0px 0px;    
+}
+
+.newhead
+{
+    color: #666;
+    width: 300px;
+    height: 265px;
+ float: left;
+    font-size:17px;
+    font-weight: normal;
+    margin: 0px 70px 0px 0px;
+    padding:40px 0px 38px 20px;
+    text-align: left;
+font-family: 'Georgia', serif;
+
+    /*border-bottom: 1px solid #d7d7d7;*/
+}
+
+.newheadr
+{
+    color: #999;
+    width: 200px;
+    height: 200px;
+ float: right;
+  padding-top: 20px;
+  padding-right: 15px;
+
+-moz-border-radius: 10px;
+border-radius: 10px;
+ 
+}
+
+.tagline
+{
+    color: #1499FC;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 5px 60px 0px 0px;
+    padding: 10px 0px 38px 0px;
+    text-align: left;
+    /*border-bottom: 1px solid #d7d7d7;*/
+}
+
+.taglinetwo
+{
+    color: #666;
+    font-size: 35px;
+    margin: 10px 30px 0px 30px;
+    padding: 10px 0px 10px 0px;
+    text-align: left;
+    /*border-bottom: 1px solid #d7d7d7;*/
+}
+
+.grey
+{
+    /*background-color: #fbfbf7;*/
+    /*height: 250px;*/
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.homeowner_imgs
+{
+    float:left;
+    width: 347px;
+    height: 600px;
+    margin: 0px 20px 0px 0px;
+}
+
+.homeowner_imgs img
+{
+    text-align:center;
+    margin: 0px 0px 0px 30px;
+}
+
+.par
+{
+    margin: 50px 25px 10px 0px;
+    padding: 0px 0px 20px 0px;
+    font-size: 18px;
+    color: #333;
+}
+.homewide
+{width: 600px;
+margin-left: 250px;}
+
+.par_homewide ul
+{
+    list-style-type: none;    margin: 0px 0px 0px 0px;
+}
+
+.par_homewide li
+{     
+margin-left: -50px;
+font-size: 17px;
+font-weight: 500;
+    margin: 5px 0px 35px 0px;
+   color: #4d4d4d;
+}
+.par_homeowner
+{
+    margin: 50px 25px 10px 0px;
+    padding: 0px 0px 10px 0px;
+ 
+    font-size: 117px;
+}
+
+.par_homeowner ul
+{
+    list-style-type: none;    margin: 0px 0px 0px 0px;
+}
+
+.par_homeowner li
+{     
+margin-left: -50px;
+font-size: 17px;
+font-weight: 500;
+    margin: 5px 0px 35px 0px;
+   color: #4d4d4d;
+}
+
+.par-left
+{
+    font-size: 17px;
+    color: #333;
+    float: left;
+    width: 300px;
+    margin: 0px 0px 30px 0px;
+}
+
+.par-right
+{
+    font-size: 17px;
+    color: #333;
+    float: right;
+    width: 300px;
+    margin: 0px 0px 30px 0px;
+}
+
+/*##### INCENTIVES PAGE #####*/
+.incentive_title
+{
+    color: #1499FC;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 80px 10px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+.incentive_subtitle
+{
+    color: #1499FC;
+    font-size: 20px;
+      margin: 60px 60px 30px 0px;
+    padding: 0px 0px 2px 0px;
+    text-align: left;
+}
+
+.incentive_par
+{
+    margin: 0px 25px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 17px;
+    color: #4d4d4d;
+}
+
+ul.incentives
+{
+    margin: 0px 0px 0px 20px;
+    font-size: 17px;
+}
+
+ul.incentives li
+{
+  font-size: 17px;
+font-weight: 500;
+    margin: 5px 0px 35px 0px;
+    color: #4d4d4d;
+}
+
+.incentive_par2
+{
+    margin: 10px 25px 10px 20px;
+    padding: 0px 0px 20px 0px;
+    font-size: 14px;
+}
+
+.incentive_par2 a:hover
+{
+    text-decoration:underline;
+}
+
+
+
+
+/*##### TEAM MEMBER PAGE #####*/
+.teampics
+{
+    margin: 105px 0px 0px 12px;
+}
+
+.teampics img
+{
+    margin: 10px 10px 0px 0px;
+    float: left;
+    width: 150px;
+    height: 170px;
+}
+
+.member_name
+{
+    color: #1499FC;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 5px 60px 0px 0px;
+    padding: 0px 0px 2px 0px;
+    text-align: left;
+}
+
+.member_title
+{
+    color: #666;
+    font-size: 16px;
+    font-style: italic;
+    margin: 0px 60px 0px 0px;
+    padding: 0px 0px 20px 0px;
+    text-align: left;
+    font-family: 'Georgia', serif;
+}
+
+.member_subtitle
+{
+    color: #666;
+    font-size: 11px;
+    
+    font-style: normal;
+    margin: 0px 60px 0px 0px;
+    padding: 0px 0px 20px 0px;
+    text-align: left;font-family: 'Georgia', serif;
+}
+
+.bio
+{
+    font-size: 16px;
+    margin: 76px 25px 10px 25px;
+    width: 610px;
+    
+     
+    height:230px;
+
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+.bottom
+{
+    font-size: 16px;
+    margin: 100px 25px 100px 25px;
+    width: 610px;
+    background-color: #e3e3e3;
+    height:230px;
+
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+}
+
+
+/*** Footer attributes */
+.footer
+{     
+    background-color: #fff;
+    color: #ffffff;
+    width: 1044px;
+    height: 75px;
+    margin: 10px auto 10px auto;
+    padding: 0px 0px 10px 0px;
+    text-align: center;
+}
+.fleft
+{
+    
+   float: left;   
+    color: #ffffff;
+    width: 740px;
+    margin: 10px 0px 10px 40px;
+    padding: 5px 10px 5px 0px;
+    text-align: left;
+}
+
+.fright
+{
+    
+   float: right;   
+    color: #ffffff;
+    width: 220px;
+    margin: 10px auto 10px auto;
+    padding: 5px 0px 5px 0px;
+    text-align: left;
+}
+
+.site_by
+{
+    margin: 42px 0px 0px 10px;
+    width: 90px;
+    float: left;
+}
+
+.site_by span
+{
+    margin: 0px 4px 0px 0px; 
+    float: left;   
+}
+
+.site_by img
+{
+    margin: -1px 0px 0px 0px;
+    float: left;
+}
+
+/* ### IMAGE SLIDER ### */
+.pics { height: 250px; width: 660px; padding:0; margin:0; overflow: hidden }
+.pics img { height: 250px; width: 660px; background-color: #eee; top:0; left:0 }
+
+.nav  
+{
+    z-index: 99;
+    top: 330px;
+    left: 390px;
+    margin: 0px 0px 0px 0px; 
+    position: absolute;
+}
+
+.nav img{ width:40px; }
+
+#prev 
+{
+    margin: 0px 0px 0px 0px;
+    top: 0px;
+    left: 0px;
+}
+
+#next 
+{
+    margin: 0px 0px 0px 554px;
+    top: 0px;
+    left: 0px; 
+}
+
+
+/*### POPUP PROPERTIES ###*/
+#fade /*--Transparent background layer--*/
+{   
+    display: none; /*--hidden by default--*/
+    background: #000000;
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%;
+    opacity: .20;
+    z-index: 9999;
+}
+
+.popup_block
+{
+    display: none; /*--hidden by default--*/
+    background-color: #FCFCF8;
+    padding: 20px;
+    border: 1px solid rgba(102, 204, 102, .5); /*blue border*/
+    float: left;
+    position: fixed;
+    top: 55%; left: 50%;
+    z-index: 99999;
+    text-align: left;
+  
+    /*--CSS3 Box Shadows--*/
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+  
+    /*--CSS3 Rounded Corners--*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  
+    /*--Clip for Transparent border--*/
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+    -moz-background-clip: padding;     /* Firefox 3.6 */
+    -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+    background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */  
+}
+
+body#contact_form
+{
+    background-color: #FCFCF8;
+}
+
+.popup_block p
+{
+    padding: 10px 0px 0px 0px;    
+}
+
+.pop_head
+{
+    font-size: 26px;
+    font-weight: normal;
+    color: #1499FC;
+    padding: 0px 0px 7px 0px;
+}
+
+img.btn_close 
+{
+    float: right;
+    margin: -30px -30px 0 0;
+}
+
+
+/*** Contact Form Properties ***/
+.contact_pop 
+{
+    min-height: 250px;
+    overflow:auto;
+    font-family: 'Abel', serif;
+}
+
+.contact_pop label
+{
+    font-size: 16px;
+    margin: 0px 0px 0px 10px;
+    padding-bottom: 5px;
+    display: block;
+    width: 123px;
+    float: left;
+    color: #777;
+    font-family: 'Abel', serif;
+}
+
+.contact_pop input
+{
+    margin-bottom: 10px;
+    padding:5px;
+    font-size:12px;
+    min-width:320px;
+}
+
+.contact_pop textarea
+{
+    height:110px; 
+    width:320px;
+    padding:5px;
+    font-size:12px;    
+}
+
+.contact_button,
+.contact_pop .contact_button
+{
+    float: right;
+    font-size: 12px;    
+    border: 1px solid silver;
+    margin: 20px 20px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    min-width:inherit;
+    padding:4px;
+}
+
+.contact_button
+{
+    float: right;
+    font-size: 12px;
+    border: 1px solid silver;
+    margin: 10px 10px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    min-width:100px;
+    padding:4px;
+}
+
+.thanks
+{
+    font-family: 'Abel', serif;
+    margin:0px 0px 0px 40px;
+}
