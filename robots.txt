@@ -1,3 +1,7 @@
 ﻿User-agent: *
 Disallow: /cgi-bin/
 Disallow: /stats/
+
+Clean-param: gclid *
+
+Host: www.greaterbostongreen.com
