@@ -13,7 +13,7 @@
       <img src="http://www.ipage.com/green-certified/hosting-badge-3.png" alt="iPage Green Certified Hosting" style="float: right; margin: -10px 15px 0px 0px;"/>        
     </a>
   </div>
-<br style="clear:both;"
+<br style="clear:both;">
 </div> <!-- end div.footer -->
 
 <!--###Popups -->
@@ -34,6 +34,22 @@
               marginwidth="0">
           </iframe> 
 	</div>
+	
+	<div id="popup_check_code" class="popup_block">
+    <div class="pop_head"><h6>Select a city or input a zip code:</h6> </div>
+	 		<iframe
+              id="check_code_form"
+              name="check_code_form"
+              align="center"
+              src="/jquery/check_code_form.php"  
+              width="99%"
+              frameborder="0"
+              height="110px"
+              marginheight="0"
+              marginwidth="0"
+			  >
+          </iframe> 
+	</div>
 
 <script>
 	$(document).ready(function() {
@@ -46,6 +62,8 @@
     			var query= popURL.split('?');
     			var dim= query[1].split('&');
     			var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+				
+				//alert(document.getElementById("citylist").value);
 
     			//Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
@@ -62,7 +80,7 @@
 
     			//Fade in Background
     			$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-    			$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
+				$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
 
     			return false;
 		});

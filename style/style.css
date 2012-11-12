@@ -90,14 +90,15 @@ body {
     overflow: auto;
     width:325px;
     height:230px;
-    margin: 20px auto 0px auto;    
+    margin: 65px 0 0 0;    
 }
 
 
 /* ######### HOME SQUARE ##########*/
 .name
-{text-decoration: none;
-border-bottom: none;
+{
+	text-decoration: none;
+	border-bottom: none;
     text-align: center;
     height: 50px;
     margin: 30px auto 0px auto;   
@@ -135,10 +136,10 @@ border-bottom: none;
 .menu li {	
 
 	display: block;
-   border: 1px dashed #ccc;
+	border: 1px dashed #ccc;
 	
-margin: 10px 5px 20px 35px;
-padding: 8px 5px 8px 5px;
+	margin: 10px 5px 15px 35px;
+	padding: 8px 5px 8px 5px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
@@ -179,7 +180,7 @@ padding: 8px 5px 8px 5px;
     margin: 15px 0px 0px 54px;
     padding: 0px 0px 0px 0px;
     float: left;
-     border-left: 1px dashed #CCC; 
+    border-left: 1px dashed #CCC; 
     border-right: 1px dashed #CCC;     
 }
 
@@ -318,6 +319,30 @@ img.logo
     float: left;
     padding: 0px 0px 0px 0px;    
 }
+
+/* ######### CHECK CODE FORM ##########*/
+
+#fadehome div.check_code
+{
+    margin: -100px 0 0 0;
+    font-size: 14px;
+    font-style: italic;
+    font-family: georgia;
+    color: #666;
+    text-align: right;
+    float: left;
+	z-index: 99;
+	position: absolute;
+}
+
+img.MA_map
+{
+  margin: 0; 
+  width: 625px; 
+  z-index:-1;
+}
+
+/* ######### CHECK CODE FORM (END) ##########*/
 
 .newhead
 {
@@ -714,6 +739,11 @@ body#contact_form
 {
     background-color: #FCFCF8;
 }
+body#check_code_form
+{
+    background-color: #FCFCF8;
+	overflow: hidden;
+}
 
 .popup_block p
 {
@@ -763,6 +793,15 @@ img.btn_close
     min-width:320px;
 }
 
+.contact_pop input.small
+{
+    font-size:12px;
+    min-width:50px;
+	margin: 0;
+	padding: 0;
+	width: 100px;
+}
+
 .contact_pop textarea
 {
     height:110px; 
@@ -800,4 +839,11 @@ img.btn_close
 {
     font-family: 'Abel', serif;
     margin:0px 0px 0px 40px;
+}
+table.checkcodeform
+{
+	border-width: 0;
+	border-spacing: 5px; 
+	border-collapse:collapse;
+	margin-top: 10px;
 }

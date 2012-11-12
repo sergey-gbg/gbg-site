@@ -4,24 +4,29 @@
 
 	<!-- Header -->
     <?php include($_SERVER["DOCUMENT_ROOT"]."/shared/header.php"); ?>
-
+	  
+	
     <!-- ### Page Title ### -->
     <title>Greater Boston Green || Energy Efficiency, HERS Ratings and Energy Star Partner</title>
 
      </head>
     <!-- End Header -->
 		
-	<body>
-
+	<body id="mainform" >
+	
 		<div class="container">
 			
 			<!-- Site Navigation -->
 			<?php include($_SERVER["DOCUMENT_ROOT"]."/shared/navigation.php"); ?>		
 
 			<div class="right" id="fadehome">
+				<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
+				<div class="check_code" >
+					<a href="#?w=200" rel="popup_check_code" class="poplight" >Check Code Complience For Your City</a>
+				</div>
 				
 				<div class="grey"> 
-					<img src="/images/thehomepage2.png" alt="Massachusetts Energy Star Efficiency" style="margin: 60px 0px 30px 0px;" >
+					<img src="/images/thehomepage2.png" alt="Massachusetts Energy Star Efficiency" style="margin: 0px 0px 30px 0px;" >
 					
 					<!--	
 					<div id="homeslide" class="pics">
