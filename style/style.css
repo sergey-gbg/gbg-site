@@ -54,6 +54,18 @@ body {
         
 }
 
+.green{
+	color:#66cc66;
+}
+
+.blue{
+	color:#0099cc;
+}
+
+.bold{
+	 font-weight: bold;
+}
+
 /* ######### LEFT PAGE ##########*/
 .left 
 {
@@ -324,7 +336,7 @@ img.logo
 
 #fadehome div.check_code
 {
-    margin: -100px 0 0 0;
+    margin: 0;
     font-size: 14px;
     font-style: italic;
     font-family: georgia;
@@ -338,7 +350,7 @@ img.logo
 img.MA_map
 {
   margin: 0; 
-  width: 625px; 
+  width: 320px; 
   z-index:-1;
 }
 

@@ -4,6 +4,9 @@
 
 	<!-- Header -->
     <?php include($_SERVER["DOCUMENT_ROOT"]."/shared/header.php"); ?>
+	
+	<!-- ### list of scripts for geotargeting -->
+	<? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
 	  
 	
     <!-- ### Page Title ### -->
@@ -20,30 +23,48 @@
 			<?php include($_SERVER["DOCUMENT_ROOT"]."/shared/navigation.php"); ?>		
 
 			<div class="right" id="fadehome">
-				<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
-				<div class="check_code" >
-					<a href="#?w=200" rel="popup_check_code" class="poplight" >Check Code Complience For Your City</a>
-				</div>
-				
-				<div class="grey"> 
-					<img src="/images/thehomepage2.png" alt="Massachusetts Energy Star Efficiency" style="margin: 0px 0px 30px 0px;" >
+			<table style="vertical-align: top;">
+				<tr>
+					<td>
+						<div class="grey" > 
+							<img src="/images/thehomepage3.png" alt="Massachusetts Energy Star Efficiency" style="margin: 0px 0px 30px 0px; width:350px;" >
+						
+							<!--	
+							<div id="homeslide" class="pics">
+								
+								 Add other images to get slideshow working 
+								
+							</div> --> <!-- end div.homeslide -->
+
+							<!-- ### Commenting out Prev and Next buttons until slideshow is enabled ### 
+							<div class="nav">
+								<a id="prev" href="javascript:void(0);" title="Previous"><img src="images/prev2.png" alt="Previous Button"/></a> 
+								<a id="next" href="javascript:void(0);" title="Next"><img src="images/next2.png" alt="Next Button"/></a>
+							</div> -->
+
 					
-					<!--	
-					<div id="homeslide" class="pics">
+							<br style="clear:both;" />
+						</div> <!-- end div.grey -->
+					</td>
+					<td>
+						<div class="green bold">122 municipialities in Massachusetts have adopted the new Stretch Code</div>
+						<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
 						
-						 Add other images to get slideshow working 
+						<div class="check_code" >
+							<a href="#?w=400" rel="popup_check_code" class="poplight" >Check your city now!</a>
+						</div>
 						
-					</div> --> <!-- end div.homeslide -->
+						<div class="blue bold" style="margin-top: -80px; position:absolute; z-index: 99;  font-size: 14px; width: 205px;">
+							<?$city=getCityByIp(getRealIpAddr());?> 
+							<div><?=$city;?>:</div>
+							<div><?=getCityStatus($city);?></div>
+						</div>
+						
+					</td>
 
-					<!-- ### Commenting out Prev and Next buttons until slideshow is enabled ### 
-					<div class="nav">
-						<a id="prev" href="javascript:void(0);" title="Previous"><img src="images/prev2.png" alt="Previous Button"/></a> 
-						<a id="next" href="javascript:void(0);" title="Next"><img src="images/next2.png" alt="Next Button"/></a>
-					</div> -->
-
-			
-				<br style="clear:both;" />
-				</div> <!-- end div.grey -->
+				</tr>
+			</table>
+	
 				
 	<div class="tagline"><h1>We are an <img src="/images/spark2.png" alt="" style="margin: -6px 6px 0px 0px;" >partner collaborating
 						with architects, builders and homeowners in and around Boston to achieve all of your energy

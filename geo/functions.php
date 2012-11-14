@@ -15,6 +15,7 @@ function getRealIpAddr()
   {
     $ip=$_SERVER['REMOTE_ADDR'];
   }
+  
   return $ip;
 }
 
@@ -37,7 +38,7 @@ function getCityByIp($ipaddress)
 	  }
 	  $lines = explode("\n", $buf);
 	  $data = $lines[count($lines)-1];
-	  $arr = split(",", $data); 
+	  $arr = split(",", $data);  //in case the name of the city consists of 2 words
 	  if (count($arr >2))
 		$city = $arr[2];
 	  fclose($fp);
@@ -50,8 +51,10 @@ function getCityByIp($ipaddress)
 }
 
 //Provide an information on the city status
-function getInfoByCity($city){
+function getCityStatus($city){
 // Download data from the table: city | status | effective date.
+	$arr = split(" ", $city); 
+	$city = $arr[0];
 	$info = "";		
 	$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/CityStatusDate.csv", "r");
 	while (($arr = fgetcsv($fd, 1024, ";")) !== FALSE) {
@@ -66,12 +69,18 @@ function getInfoByCity($city){
 			$status = $value[2];
 			$arr = split("adopted", $status);
 			$date = $value[3];
-			$info = $city . " " . $arr[0] . "adopted Stretch Code on" . $arr[1] . ". Effective date is " . $date;
+			$info = "". $arr[0] . "adopted Stretch Code on" . $arr[1] . ". Effective date is " . $date;
 			break;
 			
 		} 
 	}	
 	
+	return $info;
+}
+
+function getInfoByCity($city){
+
+	$info =  $city . " " . getCityStatus($city);
 	return $info;
 }
 ?>

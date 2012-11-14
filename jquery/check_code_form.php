@@ -2,9 +2,20 @@
 
 <!-- ### Stylesheet ### -->
 <link rel="stylesheet" type="text/css" href="/style/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
+<link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
 
 <!-- ### list of scripts for geotargeting -->
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
+<script src="/jquery/jtabs/jquery.js" type="text/javascript"></script>
+<script src="/jquery/jtabs/jquery.history_remote.pack.js" type="text/javascript"></script>
+<script src="/jquery/jtabs/jquery.tabs.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+ 	$('#container-data').tabs({ fxAutoHeight: true });
+});
+</script>
+
+
 
 <html>
 
@@ -30,7 +41,9 @@
 				$data[] = $arr;
 			}
 				
-			$city = getCityByIp($_SERVER['REMOTE_ADDR']);
+			$city = getCityByIp(getRealIpAddr());
+			$arr = split(" ", $city); //in case the name of the city consists of 2 words
+		    $city = $arr[0];
 					
 			foreach ($data as $value){?>
 				<?if($city==$value[0]){?>selected = true;<?}else{?>selected = false;<?}?>
@@ -63,48 +76,13 @@
 		}
 		
 			
-		function validateForm() {
+		function checkCityStatus(city){
 		
-			var form = document.forms["checkcodeform"];
-			var zipcode=form["zipcode"].value;
-			var zipcodelist=form["zipcodelist"].value;
-			var i, city= "";
-			var zipcity, arr, size, i, found = false;
-			var codeslist = form["zipcodelist"];
 			var citystatus = new Array();
-								
-			/*if (!zipcode) { // zipcode is empty
-				form["zipcode"].value = codeslist.value;
-				zipcode=form["zipcode"].value;
-				return false;
-			}*/
-			if (!zipcode) { // zipcode is empty
-				//form["zipcode"].style.background = "pink";
-  				//alert("Please provide a zipcode.");
-  				//return false;
-				
-				city = document.forms["checkcodeform"]["citylist"].value;
-  			} 
-			else {
+			var status_msg = "";
 			
-				// Search of the zipcode in the table: zip code | city
-				for (i = 0; i < codeslist.length; i++){
-					if (codeslist[i].value == zipcode) {
-						codeslist[i].selected = true;
-						found = true;
-						break;
-					}
-				}
-				
-				if(!found){
-					alert("Sorry, we have no information about zip code you entered");
-					return true;
-				}
-			
-				zipcity = codeslist[codeslist.selectedIndex].text;
-				arr = zipcity.split("/", 2);
-				city = arr[1]; 
-			}
+			var arr = city.split(" ", 2); //in case the name of the city consists of 2 words
+		    city = arr[0];
 			
 			// Download data from the table: city | status | effective date.
 			<?
@@ -124,44 +102,107 @@
 				fclose($fd);?>
 				
 			// Search of the city in the downloaded table.
-			size = <?=($i - 1)?>;
+			var size = <?=($i - 1)?>;
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
-					alert("" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"]);
-					//alert("" + citystatus[i]["city"] + " " + citystatus[i]["status"] + ". Effective date is " + citystatus[i]["date"]);
-					return true;
+					status_msg = "" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"];
+					return status_msg;
 				}
 			}
 				
-			alert("" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.");
-			return true;
-			 
-		}	
+			status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
+			return status_msg;
+		}
 		
+		function checkStatusByZip(){
+		
+			var form = document.forms["checkcodeform"];
+			var zipcode=form["zipcode"].value;
+			var zipcodelist=form["zipcodelist"].value;
+			var i, city= "";
+			var zipcity, arr, size, i, found = false;
+			var codeslist = form["zipcodelist"];
+			var status_msg = "";
+			var msg = document.getElementById("msg");
+								
+			if (!zipcode) { // zipcode is empty
+				form["zipcode"].style.background = "pink";
+				msg.style.color = "red";
+  				msg.innerHTML = "Please provide a zipcode!";
+  				return false;
+				
+			} 
+			else {
 			
+				// Search of the zipcode in the table: zip code | city
+				for (i = 0; i < codeslist.length; i++){
+					if (codeslist[i].value == zipcode) {
+						codeslist[i].selected = true;
+						found = true;
+						break;
+					}
+				}
+				
+				if(!found){
+					status_msg = "Sorry, we have no information about zip code you entered";
+					msg.style.color = "black";
+					msg.innerHTML  = status_msg; 
+					return false;
+				}
+			
+				zipcity = codeslist[codeslist.selectedIndex].text;
+				arr = zipcity.split("/", 2);
+				city = arr[1]; 
+			}
+			
+			msg.style.color = "black";
+			msg.innerHTML  = checkCityStatus(city);
+			return true;
+		}
+		
+		function checkStatusByCity(){
+		
+			var city = document.forms["checkcodeform"]["citylist"].value;
+			var msg = document.getElementById("msg");
+			msg.style.color = "black";
+			msg.innerHTML = checkCityStatus(city);
+		}
+					
 	</script>
 		
 	
 <form name="checkcodeform" id="checkcodeform" method="post" >
-<div class="contact_pop">
+	<div class="contact_pop">
 
-<table class="checkcodeform" border="0">
-<tr>
-<td>	  <label for="citylist" style="width:70px">City:</label></td> 
-<td>   	  <select id="citylist" name="citylist" size="1"  style="width: 100px;"></select></td>
-</tr>
-<tr>	  
-<td>	  <label for="zipcode" style="width:70px">Zip code:</label> </td>
-<td>	  <input  class="small" type="text" name="zipcode" maxlength="30" size="5" width="100px"> </td>
- </tr> 
-</table>
-	  <input class="contact_button" name="submit" type="button" value="Check my city status" onClick="validateForm()">  
-	  <select id="zipcodelist" name="zipcodelist" size="100"  style="visibility:hidden;"></select>
-  
-  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
+		<div id="container-data">
+			<ul>
+				<li><a href="#fragment-city"><span>City</span></a></li>
+				<li><a href="#fragment-zip"><span>Zip</span></a></li>
+			 
+			</ul>
+			<div id="fragment-city">
+				<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
+				<select id="citylist" name="citylist" size="1"  style="width: 180px;"></select>
+				<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
+			  
+			</div>
+			<div id="fragment-zip">
+				<label for="zipcode" style="width:130px; line-height: 16px;">Enter your zip code:</label>
+				<input  class="small" type="text" name="zipcode" maxlength="30" size="5" width="150px; line-height: 16px;">
+				<input class="contact_button" name="check_zip" type="button" value="Check!" onClick="checkStatusByZip()"> 
+			</div>
 
-</div>
+		</div>
+		
+		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
+		<?$city=getCityByIp(getRealIpAddr());?>
+		<div id="msg"><?=getInfoByCity($city);?></div>
+	  
+	  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
+	</div>
+	
+
 </form>
 
 
