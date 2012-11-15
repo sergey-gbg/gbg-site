@@ -54,7 +54,7 @@
 							<a href="#?w=400" rel="popup_check_code" class="poplight" >Check your city now!</a>
 						</div>
 						
-						<div class="blue bold" style="margin-top: -80px; position:absolute; z-index: 99;  font-size: 14px; width: 205px;">
+						<div class="blue bold" style="margin-top: -80px; position:absolute; z-index: 99;  font-size: 14px; width: 180px;">
 							<?$city=getCityByIp(getRealIpAddr());?> 
 							<div><?=$city;?>:</div>
 							<div><?=getCityStatus($city);?></div>
@@ -66,7 +66,7 @@
 			</table>
 	
 				
-	<div class="tagline"><h1>We are an <img src="/images/spark2.png" alt="" style="margin: -6px 6px 0px 0px;" >partner collaborating
+	<div class="tagline" style="margin:30px 0 40px 0;"><h1>We are an <img src="/images/spark2.png" alt="" style="margin: -6px 6px 0px 0px;" >partner collaborating
 						with architects, builders and homeowners in and around Boston to achieve all of your energy
 						efficiency goals.</h1></div>
 <div class="tagline"><h1>RESNET certified. We do HERS energy ratings. </h1></div>

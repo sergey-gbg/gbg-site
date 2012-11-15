@@ -6,13 +6,36 @@
     padding:0;
 }
 
-h1, h2, h3, h4, h5, h6, p
+h2, h4, h5, h6, p
 { 
     margin: 0; 
     padding: 0;  
     border: 0;  
     outline: 0;  
     font-size: 100%;  
+    font-weight: normal;  
+    background: transparent;   
+    display: inline;
+}
+
+h1
+{ 
+    margin: 0; 
+    padding: 0;  
+    border: 0;  
+    outline: 0;  
+    font-size: 33px;  
+    font-weight: normal;  
+    background: transparent;   
+    display: inline;
+}
+h3
+{ 
+    margin: 0; 
+    padding: 0;  
+    border: 0;  
+    outline: 0;  
+    font-size: 32px;  
     font-weight: normal;  
     background: transparent;   
     display: inline;
@@ -329,7 +352,8 @@ img.logo
     width: 660px;
     /*height: 629px;*/
     float: left;
-    padding: 0px 0px 0px 0px;    
+    padding: 0px 0px 0px 0px;
+	text-align: justify;    
 }
 
 /* ######### CHECK CODE FORM ##########*/
@@ -350,7 +374,7 @@ img.logo
 img.MA_map
 {
   margin: 0; 
-  width: 320px; 
+  width: 300px; 
   z-index:-1;
 }
 
@@ -391,8 +415,8 @@ border-radius: 10px;
     color: #1499FC;
     font-size: 35px;
     font-weight: normal;
-    margin: 5px 60px 0px 0px;
-    padding: 10px 0px 38px 0px;
+    margin: 5px 0px 5px 0px;
+    padding: 0;
     text-align: left;
     /*border-bottom: 1px solid #d7d7d7;*/
 }
@@ -431,48 +455,52 @@ border-radius: 10px;
 
 .par
 {
-    margin: 50px 25px 10px 0px;
+    margin: 50px 15px 10px 10px;
     padding: 0px 0px 20px 0px;
     font-size: 18px;
     color: #333;
 }
 .homewide
-{width: 600px;
-margin-left: 250px;}
+{
+	width: 663px;
+	margin-left: 360px;
+}
 
 .par_homewide ul
 {
-    list-style-type: none;    margin: 0px 0px 0px 0px;
+    list-style-type: none;    
+	margin: 0;
 }
 
 .par_homewide li
 {     
-margin-left: -50px;
-font-size: 17px;
-font-weight: 500;
+	/*margin-left: -50px;*/
+	font-size: 17px;
+	font-weight: 500;
     margin: 5px 0px 35px 0px;
-   color: #4d4d4d;
+	color: #4d4d4d;
 }
 .par_homeowner
 {
-    margin: 50px 25px 10px 0px;
+    margin: 30px 2px 0px 0px;
     padding: 0px 0px 10px 0px;
- 
+	text-align: justify;
     font-size: 117px;
 }
 
 .par_homeowner ul
 {
-    list-style-type: none;    margin: 0px 0px 0px 0px;
+    list-style-type: none;    
+	margin: 0px 0px 0px 0px;
 }
 
 .par_homeowner li
 {     
-margin-left: -50px;
-font-size: 17px;
-font-weight: 500;
+	/*margin-left: -50px;*/
+	font-size: 17px;
+	font-weight: 500;
     margin: 5px 0px 35px 0px;
-   color: #4d4d4d;
+	color: #4d4d4d;
 }
 
 .par-left
@@ -480,8 +508,9 @@ font-weight: 500;
     font-size: 17px;
     color: #333;
     float: left;
-    width: 300px;
+    width: 640px;
     margin: 0px 0px 30px 0px;
+	text-align: justify;
 }
 
 .par-right
@@ -499,7 +528,7 @@ font-weight: 500;
     color: #1499FC;
     font-size: 30px;
     font-weight: normal;
-    margin: 80px 10px 0px 0px;
+    margin: 40px 10px 0px 0px;
     padding: 0px 0px 10px 0px;
     text-align: left;
 }
@@ -515,7 +544,7 @@ font-weight: 500;
 
 .incentive_par
 {
-    margin: 0px 25px 0px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     font-size: 17px;
     color: #4d4d4d;
