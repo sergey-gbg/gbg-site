@@ -105,7 +105,7 @@ body {
 {
     overflow: auto;
     width:325px;
-    height:200px;
+    height:150px;
     margin: 15px auto 0px auto;     
     
     border-bottom: 0px solid #d7d7d7;    
@@ -114,7 +114,7 @@ body {
 .square2
 {
     width:325px;
-    height:235px;
+    height:200px;
     margin: 1px auto 0px auto;   
     padding-bottom: 7px;
     border-bottom: 0px solid #d7d7d7;    
@@ -124,8 +124,8 @@ body {
 {
     overflow: auto;
     width:325px;
-    height:230px;
-    margin: 65px 0 0 0;    
+    height:140px;
+    margin: 0 0 0 0;    
 }
 
 
@@ -273,6 +273,18 @@ body {
     float: left;
 }
 
+div.map
+{
+    margin: 0 0 0 57px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: georgia;
+   /* color: #666;*/
+    text-align: left;
+    float: left;
+	width: 262px;
+}
+
 span.phone
 {
     display: block;
@@ -374,7 +386,7 @@ img.logo
 img.MA_map
 {
   margin: 0; 
-  width: 300px; 
+  width: 262px; 
   z-index:-1;
 }
 

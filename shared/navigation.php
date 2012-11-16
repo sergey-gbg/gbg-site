@@ -30,7 +30,24 @@
 			<span class="phone"> 617-418-1444 </span>
 			<span class="email"><a href="#?w=495" rel="popup_contact" class="poplight">Contact Us</a></span>
 		</div>
+		
+		
 	</div> <!-- end div.square3 -->
+	
+	<div class="map">
+		<div class="green bold">new Stretch Code</div>
+		<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
+					
+		<div class="check_code" style="margin-top: -30px; position:absolute; z-index: 99; ">
+			<a href="#?w=400" rel="popup_check_code" class="poplight" >Check your city now!</a>
+		</div>
+		
+		<div class="blue bold" style="margin-top: 0px; position:absolute; z-index: 99;  font-size:10px; width: 262px;">
+			<?$city=getCityByIp(getRealIpAddr());?> 
+			<div><?=$city;?>:</div>
+			<div><?=getShortCityStatus($city);?></div>
+		</div>
+	</div>
 </div> <!-- end div.left -->
 
 <!-- Client Login and Logo -->
