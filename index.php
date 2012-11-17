@@ -6,7 +6,7 @@
     <?php include($_SERVER["DOCUMENT_ROOT"]."/shared/header.php"); ?>
 	
 	<!-- ### list of scripts for geotargeting -->
-	<? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
+	<? include_once($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
 	  
 	
     <!-- ### Page Title ### -->

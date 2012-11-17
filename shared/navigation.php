@@ -1,3 +1,6 @@
+<!-- ### list of scripts for geotargeting -->
+<? include_once($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
+
 <div class="left">
 	<div class="square1">
 		<div class="name">
@@ -12,10 +15,10 @@
 	<div class="square2">
 		<div class="menu">
 			<ul>         
-        <a href="/architects-builders/"><li id="contractors">Architects & Builders</li></a>
-        <a href="/homeowners/"><li id="homeowners">Homeowners</li></a>
-        <a href="/incentives/"><li id="incentives">Incentives</li></a>        
-        <a href="/team/"><li id="team">Our Team</li></a>          
+        <li id="contractors"><a href="/architects-builders/">Architects & Builders</a></li>
+        <li id="homeowners"><a href="/homeowners/">Homeowners</a></li>
+        <li id="incentives"><a href="/incentives/">Incentives</a></li>        
+        <li id="team"><a href="/team/">Our Team</a></li>          
 			</ul>
 		</div> <!-- end div.menu -->
 	</div> <!-- end div.square2 -->
