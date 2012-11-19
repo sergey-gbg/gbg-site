@@ -15,10 +15,10 @@
 	<div class="square2">
 		<div class="menu">
 			<ul>         
-        <li id="contractors"><a href="/architects-builders/">Architects & Builders</a></li>
-        <li id="homeowners"><a href="/homeowners/">Homeowners</a></li>
-        <li id="incentives"><a href="/incentives/">Incentives</a></li>        
-        <li id="team"><a href="/team/">Our Team</a></li>          
+        <a href="/architects-builders/"><li id="contractors">Architects & Builders</li></a>
+        <a href="/homeowners/"><li id="homeowners">Homeowners</li></a>
+        <a href="/incentives/"><li id="incentives">Incentives</li></a>        
+        <a href="/team/"><li id="team">Our Team</li></a>          
 			</ul>
 		</div> <!-- end div.menu -->
 	</div> <!-- end div.square2 -->

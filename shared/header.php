@@ -1,3 +1,14 @@
+<?
+function is_browser_IE($agent) {
+	preg_match("/(MSIE)(?:\/| )([0-9.]+)/", $agent, $browser_info); // регулярное выражение, которое позволяет отпределить 90% браузеров
+    list(,$browser,$version) = $browser_info; // получаем данные из массива в переменную
+    if ($browser == 'MSIE') { // если браузер определён как IE
+        return true; // иначе просто возвращаем IE и номер версии
+    }
+     
+	return false; 
+}
+?>
 <head>
 
   <!-- ### JQuery Library ### -->
@@ -8,6 +19,11 @@
 
   <!-- ### Stylesheet ### -->
   <link rel="stylesheet" type="text/css" href="/style/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
+  
+  <!-- ### Stylesheet for IE ### -->
+  <?if(is_browser_IE($_SERVER['HTTP_USER_AGENT'])):?>
+	<link rel="stylesheet" type="text/css" href="/style/ie.style.css" />
+  <?endif?>
 
   <!-- ### JQuery Cycle Plugin ### -->
   <script type="text/javascript" src="/style/jquery.cycle.all.js"></script>

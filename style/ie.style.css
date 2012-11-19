@@ -1,0 +1,15 @@
+/* Css for IE*/
+
+.menu li {	
+
+	display: block;
+	border: 1px dashed #ccc;
+	
+	margin: 0px 5px 0px 35px;
+	padding: 8px 5px 8px 5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+   
+    /* border-bottom: 1px solid #ccc; */
+}
