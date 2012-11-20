@@ -41,10 +41,10 @@
 		<div class="green bold">The Stretch Energy Code by City</div>
 		<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
 					
-		<div class="check_code" style="margin-top: -30px; position:absolute; z-index: 99; ">
+		<div class="check_code" style="margin-top: -50px; position:absolute; z-index: 99; ">
 			<?$city=getCityByIp(getRealIpAddr());?>
-			<div class="green bold"><?=$city;?></div>
-			<a href="#?w=400" rel="popup_check_code" class="poplight" >cnange</a>
+			<div style="font-size: 16px;" ><?=$city;?></div>
+			<a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 10px">(change)</a>
 		</div>
 		
 		<div class="blue bold" style="margin-top: 0px; position:absolute; z-index: 99;  font-size:14px; width: 212px;">

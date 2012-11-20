@@ -269,25 +269,6 @@ body {
     float: left;
 }
 
-div.map
-{
-    display: block;
-    border: 1px dashed #ccc;
-    
-    margin: 10px 5px 15px 35px;
-    padding: 8px 5px 8px 5px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-style: italic;
-    font-family: georgia;
-   /* color: #666;*/
-    text-align: left;
-    float: left;
-	
-}
 
 span.phone
 {
@@ -386,6 +367,27 @@ img.logo
 	z-index: 99;
 	position: absolute;
 }
+
+div.map
+{
+    display: block;
+    border: 1px dashed #ccc;
+    
+    margin: 10px 5px 15px 50px;
+    padding: 8px 5px 20px 5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-style: italic;
+    font-family: georgia;
+   /* color: #666;*/
+    text-align: left;
+    float: center;
+    
+}
+
 
 img.MA_map
 {

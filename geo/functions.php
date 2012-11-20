@@ -46,7 +46,7 @@ function getCityByIp($ipaddress)
 
 	if(empty($city)) $city="Boston";
 	
-	return $city;
+	return $city . ", MA";
 	
 }
 
