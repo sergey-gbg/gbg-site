@@ -84,6 +84,7 @@
 <script>
 	$(document).ready(function() {
 		$('#incentives').css("background-color","#A4E1FE");
+		$('#incentives_ref').css("background-color","#A4E1FE");
 		$('#incentives').css("color","#fff");
 	});
 </script>
