@@ -271,14 +271,22 @@ body {
 
 div.map
 {
-    margin: 0 0 0 57px;
+    display: block;
+    border: 1px dashed #ccc;
+    
+    margin: 10px 5px 15px 35px;
+    padding: 8px 5px 8px 5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+
     font-size: 14px;
     font-style: italic;
     font-family: georgia;
    /* color: #666;*/
     text-align: left;
     float: left;
-	width: 262px;
+	
 }
 
 span.phone
@@ -382,7 +390,7 @@ img.logo
 img.MA_map
 {
   margin: 0; 
-  width: 262px; 
+  width: 212px; 
   z-index:-1;
 }
 

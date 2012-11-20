@@ -79,7 +79,7 @@ paths.each do |path|
     in_map << path["id"].gsub(/_/, ' ').downcase
     count += 1
   else
-    path["style"] = "fill:#0099cc;stroke-dasharray:none"
+    path["style"] = "fill:#f7f7c7;stroke-dasharray:none"
   end
 end
 
