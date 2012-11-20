@@ -38,16 +38,16 @@
 	</div> <!-- end div.square3 -->
 	
 	<div class="map">
-		<div class="green bold">The Stretch Energy Code by City</div>
+		<div>The Stretch Energy Code by City</div>
 		<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
 					
-		<div class="check_code" style="margin-top: -50px; position:absolute; z-index: 99; ">
+		<div class="check_code" style="margin-top: -40px; position:absolute; z-index: 99; ">
 			<?$city=getCityByIp(getRealIpAddr());?>
-			<div style="font-size: 16px;" ><?=$city;?></div>
-			<a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 10px">(change)</a>
+			<div><?=$city;?></div>
+			<a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 12px">(change)</a>
 		</div>
 		
-		<div class="blue bold" style="margin-top: 0px; position:absolute; z-index: 99;  font-size:14px; width: 212px;">
+		<div class="blue bold" style="margin-top: 0px; position:absolute; z-index: 99;  font-size:15px; width: 212px;">
 			<?getShortCityStatus($city);?>	
 			<div>In effect since Oct-11 2010</div>
 		</div>
