@@ -44,7 +44,7 @@ function getCityByIp($ipaddress)
 	  fclose($fp);
 	}
 
-	$city = getMunicipality($city);
+	//$city = getMunicipality($city);
 
 	if(empty($city)) $city="Boston";
 	
