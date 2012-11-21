@@ -103,18 +103,16 @@ $(function() {
 				
 			// Search of the city in the downloaded table.
 			var size = <?=($i - 1)?>;
+			status_msg = "Not in effect"
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
 					status_msg = "In effect since " + citystatus[i]["date"];
 					return status_msg;
-				}
-				else
-				{
-					return "The Stretch Code Not In Effect"
-				}
+				}				
 			}
 				
+
 			//status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
 			return status_msg;
 		}
