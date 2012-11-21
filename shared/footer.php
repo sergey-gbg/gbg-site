@@ -90,7 +90,7 @@
           var frame = document.getElementById("check_code_form");
           var frameDoc = frame.contentDocument || frame.contentWindow.document;
           alert("test");
-          
+          alert(frameDoc.getElementById("msg").innerHTML);
     			$('#fade , .popup_block').fadeOut(function() {
             $('#fade, a.close').remove();  //fade them both out
     			});
