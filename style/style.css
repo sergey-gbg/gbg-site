@@ -302,7 +302,7 @@ img.MA_map
 
 div.check_code
 {
-   margin: -40px 0 0 0;
+   margin: -40px 0 0 
    position:absolute; 
    z-index: 99;
 }
@@ -756,17 +756,6 @@ border-radius: 10px;
 /* ### IMAGE SLIDER ### */
 .pics { height: 250px; width: 660px; padding:0; margin:0; overflow: hidden }
 .pics img { height: 250px; width: 660px; background-color: #eee; top:0; left:0 }
-
-.nav  
-{
-    z-index: 99;
-    top: 330px;
-    left: 390px;
-    margin: 0px 0px 0px 0px; 
-    position: absolute;
-}
-
-.nav img{ width:40px; }
 
 #prev 
 {
