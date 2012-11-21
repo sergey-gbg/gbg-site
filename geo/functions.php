@@ -52,13 +52,12 @@ function getCityByIp($ipaddress)
 	
 }
 
-function getShortCityStatus($city){
+function getShortCityStatus($city, $default = "Not in effect", $prefix = ""){
 
 	$info = "";		
 
 	$data = getDataFromFile("CityDate.csv");
-	
-	$i = 0;
+
 	foreach ($data as $value){
 	
 		if (strtolower($value[0]) == strtolower($city)){
@@ -69,7 +68,9 @@ function getShortCityStatus($city){
 		} 
 	}	
 
-	if(empty($info)) $info="Not in effect";
+	if (empty($info)) $info = $default;
+
+	if !(empty($info)) $info = $prefix . $info;
 	
 	return $info;
 }
@@ -92,6 +93,12 @@ function getMunicipality($city){
 	return ucfirst($info);
 }
 
+function getCityZipInfo(){
+	$data = getDataFromFile("CityZip.csv");
+	return $data;
+}
+
+
 
 function getDataFromFile($name){
 
@@ -102,6 +109,8 @@ function getDataFromFile($name){
 
 	return $data;
 }
+
+
 
 
 

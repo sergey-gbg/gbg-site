@@ -19,159 +19,45 @@ $(function() {
 
 <html>
 
-<body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
+<body id="check_code_form"> 
 	
 	<script type="text/javascript">
 	
-		function clear_color() {
-			document.forms["checkcodeform"]["zipcode"].style.background = "white";
-			
-		}
-		
-		//Download the list of cities from DB
-		function loadCitiesList() {
-			
-			var citylist = document.forms["checkcodeform"]["citylist"];
-			var arr, selected, opt, i=0;
-						
-			// Download data from the table: city | status | effective date.
-		<?
-			$fd1 = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/CityStatusDate.csv", "r");
-			while (($arr = fgetcsv($fd1, 1024, ";")) !== FALSE) {
-				$data[] = $arr;
-			}
-				
-			$city = getCityByIp(getRealIpAddr());
-			$arr = split(" ", $city); //in case the name of the city consists of 2 words
-		    $city = $arr[0];
-					
-			foreach ($data as $value){?>
-				<?if($city==$value[0]){?>selected = true;<?}else{?>selected = false;<?}?>
-				citylist.options[i] = new Option("<?=$value[0]?>", "<?=$value[0]?>", selected, selected); 
-				//citylist.appendChild(opt);
-				i++;
-			<?}
-			fclose($fd1);?>
-		}
-		
-		function loadZipCodes() {
-		
-			var zipcode=document.forms["checkcodeform"]["zipcodelist"];
-			var i=0;
-						
-			<?
-			$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/ZipCodes.txt", "r");
-			while (($array = fgetcsv($fd, 1024, " ")) !== FALSE) {
-				$dat[] = $array;
-			}
-			foreach ($dat as $val){ 
-			?>
-				zipcode.options[i] = new Option("<?=$val[0]."/".$val[1]?>", "<?=$val[0]?>"); 
-				i++;
-				//zipcode.appendChild(option);
-
-			<?}
-			fclose($fd);?>
-									
-		}
-		
-			
-		function checkCityStatus(city){
-		
-			var citystatus = new Array();
-			var status_msg = "";
-			
-			var arr = city.split(" ", 2); //in case the name of the city consists of 2 words
-		    city = arr[0];
-			
-			// Download data from the table: city | status | effective date.
-			<?
-				$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/CityStatusDate.csv", "r");
-				while (($arr = fgetcsv($fd, 1024, ";")) !== FALSE) {
-					$data[] = $arr;
-				}
-				$i = 0;
-				foreach ($data as $value){?>
-					
-					citystatus[<?=$i;?>] = new Array("city", "status", "date");
-					citystatus[<?=$i;?>]["city"]="<?=$value[0];?>";
-					citystatus[<?=$i;?>]["status"]="<?=$value[2];?>";
-					citystatus[<?=$i;?>]["date"]="<?=$value[3];?>";
-					<?$i = $i + 1;
-				}
-				fclose($fd);?>
-				
-			// Search of the city in the downloaded table.
-			var size = <?=($i - 1)?>;
-			for (i = 0; i < size; i++){
-				if (citystatus[i]["city"] == city){
-					arr = (citystatus[i]["status"]).split("adopted", 2);
-					status_msg = "" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"];
-					return status_msg;
-				}
-			}
-				
-			status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
-			return status_msg;
-		}
-		
-		function checkStatusByZip(){
-		
-			var form = document.forms["checkcodeform"];
-			var zipcode=form["zipcode"].value;
-			var zipcodelist=form["zipcodelist"].value;
-			var i, city= "";
-			var zipcity, arr, size, i, found = false;
-			var codeslist = form["zipcodelist"];
-			var status_msg = "";
-			var msg = document.getElementById("msg");
-								
-			if (!zipcode) { // zipcode is empty
-				form["zipcode"].style.background = "pink";
-				msg.style.color = "red";
-  				msg.innerHTML = "Please provide a zipcode!";
-  				return false;
-				
-			} 
-			else {
-			
-				// Search of the zipcode in the table: zip code | city
-				for (i = 0; i < codeslist.length; i++){
-					if (codeslist[i].value == zipcode) {
-						codeslist[i].selected = true;
-						found = true;
-						break;
-					}
-				}
-				
-				if(!found){
-					status_msg = "Sorry, we have no information about zip code you entered";
-					msg.style.color = "black";
-					msg.innerHTML  = status_msg; 
-					return false;
-				}
-			
-				zipcity = codeslist[codeslist.selectedIndex].text;
-				arr = zipcity.split("/", 2);
-				city = arr[1]; 
-			}
-			
-			msg.style.color = "black";
-			msg.innerHTML  = checkCityStatus(city);
-			return true;
-		}
 		
 		function checkStatusByCity(){
 		
 			var city = document.forms["checkcodeform"]["citylist"].value;
+			var city_msg = document.getElementById("city");
+			var msg = ""
+
+			if city == 'none'{
+				city_msg.innerHTML = "Please, select city or enter your zip code"
+			}
+			else{
+				city_msg.innerHTML = city
+				msg = <?=getShortCityStatus($city, ,"The Stretch Energy Code ");?>
+			}
+			
+			displayMessage(msg)
+		}
+
+		function checkStatusByZip(){
+		
+			var zip = document.forms["checkcodeform"]["zipcode"].value;
+			
+			checkStatusByCity()
+			
+		}
+
+		function displayMessage(msg){
 			var msg = document.getElementById("msg");
-			msg.style.color = "black";
-			msg.innerHTML = checkCityStatus(city);
+			msg.innerHTML = msg
 		}
 					
 	</script>
 		
-	
+
+
 <form name="checkcodeform" id="checkcodeform" method="post" >
 	<div class="contact_pop">
 
@@ -182,8 +68,15 @@ $(function() {
 			 
 			</ul>
 			<div id="fragment-city">
+				
 				<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
 				<select id="citylist" name="citylist" size="1"  style="width: 180px;"></select>
+				<option value="none"> - - Select - -</option>
+				<?$city_zip_data=getCityZipInfo()?>
+				<?foreach ($city_zip_data as $value){?>
+					<option value="<?=$value[1]?>"><?=$value[1]?></option>
+				<?}?>
+
 				<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
 			  
 			</div>
@@ -195,9 +88,13 @@ $(function() {
 
 		</div>
 		
-		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
-		<?$city=getCityByIp(getRealIpAddr());?>
-		<div id="msg"><?=getInfoByCity($city);?></div>
+<!-- 		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
+		<?$city=getCityByIp(getRealIpAddr());?> -->
+		<div id = "city">Please, select city or zip</div>
+		<div class="city_info">
+      <div id = "msg"><?=getShortCityStatus($city, "","The Stretch Energy Code ");?></div>
+      <a href="#" class="poplight" style="font-size: 12px">(more info)</a>
+    </div>
 	  
 	  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
 	</div>
