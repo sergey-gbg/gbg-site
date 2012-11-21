@@ -44,7 +44,7 @@ function getCityByIp($ipaddress)
 	  fclose($fp);
 	}
 
-	$city = getMunicipality($city)
+	$city = getMunicipality($city);
 
 	if(empty($city)) $city="Boston";
 	
@@ -56,7 +56,7 @@ function getShortCityStatus($city){
 
 	$info = "";		
 
-	$data = getDataFromFile("CityDate.csv")
+	$data = getDataFromFile("CityDate.csv");
 	
 	$i = 0;
 	foreach ($data as $value){
@@ -78,7 +78,7 @@ function getMunicipality($city){
 
 	$info = "";		
 
-	$data = getDataFromFile("CityMunicipality.csv")
+	$data = getDataFromFile("CityMunicipality.csv");
 	
 	foreach ($data as $value){
 	
@@ -100,7 +100,7 @@ function getDataFromFile($name){
 		$data[] = $arr;
 	}
 
-	return $data
+	return $data;
 }
 
 

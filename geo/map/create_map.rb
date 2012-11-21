@@ -4,7 +4,6 @@ require 'nokogiri'
 
 
 
-
 begin
   s = IO.read('data.txt')
   z = IO.read('zip_codes.txt')
