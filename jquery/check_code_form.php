@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="/style/style.css" />
 <link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
 
-<link rel="stylesheet" href="/jquery/bootstrap/bootstrap-tab.css" type="text/css">
+<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
 
 <!-- ### list of scripts for geotargeting -->
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
