@@ -88,6 +88,11 @@ $(function() {
 			
 			var arr = city.split(" ", 2); //in case the name of the city consists of 2 words
 		    city = arr[0];
+
+		  var tp = document.getElementById("geo-city");
+
+			alert("test2");
+			alert(tp.innerHTML);
 			
 			// Download data from the table: city | status | effective date.
 			<?
