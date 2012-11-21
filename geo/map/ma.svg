@@ -3,21 +3,59 @@
 <svg
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   version="1.0"
+   version="1.1"
    width="296.67001"
    height="185.33"
    viewBox="12.711167 456.56707 296.66855 185.3288"
    style="background: #FCFCF8"
    id="svg2">
-  <defs
-     id="defs6303" />
+  
+  <defs>
+    <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
+                          specularExponent="20" lighting-color="#bbbbbb"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+<filter id="drop-shadow"> 
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>    
+    <feOffset in="blur" dx="0.5" dy="0.5" result="offsetBlur"/>    
+    <feMerge>     
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+    <filter id="dropshadow" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+     <feComponentTransfer in="SourceAlpha">
+         <feFuncR type="discrete" tableValues="1"/>
+         <feFuncG type="discrete" tableValues="0"/>
+         <feFuncB type="discrete" tableValues="0"/>
+     </feComponentTransfer>
+     <feGaussianBlur stdDeviation="2"/>
+     <feOffset dx="0" dy="0" result="shadow"/>
+     <feComposite in="SourceGraphic" in2="shadow" operator="over"/>
+   </filter>
+  </defs>
+      
   <title
      id="title4">Libre Map Project</title>
-  <g
+  <g 
      transform="matrix(10,0,0,-10,-113.90036,5207.0666)"
+     filter="url(#drops-hadow)"
      id="g6">
     <g
        id="townships"
+
        style="fill:none;stroke:#000;stroke-width:0.015;stroke-linecap:round">
       <path
          d="M 34.740973,460.76167 L 34.801396,460.68136 L 34.82232,460.55988 L 34.814796,460.51709 L 34.813108,460.50749 L 34.812919,460.50641 L 34.808546,460.50833 L 34.747889,460.53498 L 34.745353,460.5361 L 34.744336,460.53798 L 34.685022,460.64797 L 34.678288,460.66046 L 34.678243,460.66054 L 34.72568,460.75443 L 34.734015,460.77092 L 34.740973,460.76167 z"

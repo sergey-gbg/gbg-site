@@ -71,7 +71,9 @@
 <script>
 	$(document).ready(function() {
 		$('#homeowners').css("background-color","#A4E1FE");
+		$('#homeowners_ref').css("background-color","#A4E1FE");
 		$('#homeowners').css("color","#fff");
+		
 	});
 </script>
 

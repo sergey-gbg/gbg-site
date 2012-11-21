@@ -103,6 +103,7 @@
 <script>
 $(document).ready(function() {
 	$('#team').css("background-color","#A4E1FE");
+	$('#team_ref').css("background-color","#A4E1FE");
 	$('#team').css("color","#fff");
 });
 

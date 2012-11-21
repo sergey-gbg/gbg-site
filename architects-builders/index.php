@@ -65,7 +65,9 @@
 <script>
 	$(document).ready(function() {
 		$('#contractors').css("background-color","#A4E1FE");
+		$('#contractors_ref').css("background-color","#A4E1FE");
 		$('#contractors').css("color","#fff");
+	
 	});
 </script>
 
