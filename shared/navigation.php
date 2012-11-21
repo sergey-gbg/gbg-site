@@ -49,7 +49,7 @@
         </div>
         
         <div class="city_info">
-            <div><?=getShortCityStatus($city);?></div>
+            <div id="code-info"><?=getShortCityStatus($city);?></div>
         </div>
     </div>
 

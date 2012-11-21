@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <!-- ### Stylesheet ### -->
-<link rel="stylesheet" type="text/css" href="/style/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
+<link rel="stylesheet" type="text/css" href="/style/style.css" />
 <link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
 
 <!-- ### list of scripts for geotargeting -->
@@ -41,7 +41,7 @@ $(function() {
 				$data[] = $arr;
 			}
 				
-			$city = getCityByIp(getRealIpAddr());
+			$city = "";
 			$arr = split(" ", $city); //in case the name of the city consists of 2 words
 		    $city = $arr[0];
 					
@@ -106,12 +106,16 @@ $(function() {
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
-					status_msg = "" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"];
+					status_msg = "In effect since " + citystatus[i]["date"];
 					return status_msg;
+				}
+				else
+				{
+					return "The Stretch Code Not In Effect"
 				}
 			}
 				
-			status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
+			//status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
 			return status_msg;
 		}
 		
