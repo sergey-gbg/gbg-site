@@ -39,8 +39,8 @@ function getCityByIp($ipaddress)
 	  $lines = explode("\n", $buf);
 	  $data = $lines[count($lines)-1];
 	  $arr = split(",", $data);  //in case the name of the city consists of 2 words
-	  if (count($arr >2))
-		$city = $data;//$arr[2];
+	  //if (count($arr >2))
+		$city = $arr[2];
 	  fclose($fp);
 	}
 

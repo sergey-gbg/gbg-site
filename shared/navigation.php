@@ -49,8 +49,7 @@
         </div>
         
         <div class="city_info">
-            <?$status=getShortCityStatus($city);?>  
-            <div><?=$status;?></div>
+            <div><?=getShortCityStatus($city);?></div>
         </div>
     </div>
 
