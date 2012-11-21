@@ -33,6 +33,8 @@ links = {}
 
 towns_data = s.split(/\n/)
 
+text_info = ''
+
 count = 0
 towns_data.each do |row|
   next if row =~ /^[A-Z]{1}$/ || row =~ /Top of page/ || row.empty? ||
@@ -41,11 +43,22 @@ towns_data.each do |row|
   data = row.split(/ \/ /)
 
   if cities.include? data[0].downcase
-    links[data[0].downcase] = data[1].downcase
+
+    mun = data[1].downcase
+    mun = 'boston' if data[1].downcase =~ /annexed.*to.*boston/i
+    
+    links[data[0].downcase] = mun
+
+    text_info += data[0].downcase + ',' + mun + "\n"
   end
 
 end
 
+File.open("CityMunicipality.csv", "w") do |f|
+  f.write text_info
+end
+
+text_info = ''
 stretch = {}
 stretch_data = c.split(/\n/)
 stretch_data.each do |row|
@@ -67,6 +80,12 @@ stretch_data.each do |row|
 
   stretch[data[0].downcase] = {adopted: adopt, effective: eff}
 
+  text_info += data[0].downcase + ',' + eff.strftime("%b-%d %Y") + "\n"
+
+end
+
+File.open("CityDate.csv", "w") do |f|
+  f.write text_info
 end
 
 in_map = []
@@ -91,7 +110,7 @@ File.open("ma_new.svg", "w") do |f|
   f.write(map)
 end
 
-puts count
+
 
 #puts map
 

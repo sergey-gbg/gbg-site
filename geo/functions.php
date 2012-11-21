@@ -38,44 +38,74 @@ function getCityByIp($ipaddress)
 	  }
 	  $lines = explode("\n", $buf);
 	  $data = $lines[count($lines)-1];
-	  $arr = split(",", $data);  //in case the name of the city consists of 2 words
-	  //if (count($arr >2))
+	  $arr = split(",", $data); 
+
 		$city = $arr[2];
 	  fclose($fp);
 	}
 
+	$city = getMunicipality($city)
+
 	if(empty($city)) $city="Boston";
 	
-	return $city . ", MA";
+	return $city;
 	
 }
 
 function getShortCityStatus($city){
 
-	// Download data from the table: city | status | effective date.
-	$arr = split(" ", $city); 
-	$city = $arr[0];
 	$info = "";		
-	$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/CityStatusDate.csv", "r");
-	while (($arr = fgetcsv($fd, 1024, ";")) !== FALSE) {
-		$data[] = $arr;
-	}
+
+	$data = getDataFromFile("CityDate.csv")
+	
 	$i = 0;
 	foreach ($data as $value){
 	
-		if ($value[0] == $city){
+		if ($value[0] == strtolower($city)){
 	
-			$info="";
-			$status = $value[2];
-			$arr = split("adopted", $status);
-			$date = $value[3];
-			$info = "". $arr[0] . "adopted Stretch Code on" . $arr[1];
+			$date = $value[1];
+			$info = "In effect since " . $date;
 			break;
 		} 
 	}	
+
+	if(empty($info)) $info="Not in effect";
 	
 	return $info;
 }
+
+function getMunicipality($city){
+
+	$info = "";		
+
+	$data = getDataFromFile("CityMunicipality.csv")
+	
+	foreach ($data as $value){
+	
+		if ($value[0] == strtolower($city)){
+	
+			$info=$value[1];
+			break;
+		} 
+	}	
+
+	return ucfirst($info);
+}
+
+
+function getDataFromFile($name){
+
+	$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/" . $name, "r");
+	while (($arr = fgetcsv($fd, 1024, ",")) !== FALSE) {
+		$data[] = $arr;
+	}
+
+	return $data
+}
+
+
+
+
 
 //Provide an information on the city status
 function getCityStatus($city){
