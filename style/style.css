@@ -300,25 +300,25 @@ img.MA_map
   z-index:-1;
 }
 
-#map div.check_code
+div.check_code
 {
    margin: -40px 0 0 0;
    position:absolute; 
    z-index: 99;
 }
 
-#map div.map-header
+div.map-header
 {
   text-align: center;
 }
 
-#map div.map-image
+div.map-image
 {
   text-align: center;
 }
 
 
-#map div.city_info
+div.city_info
 {
    margin-top: 0px; 
    position:absolute; 

@@ -38,7 +38,7 @@
 	</div> <!-- end div.square3 -->
 	
 	<div class="map">
-        <div style = "map-header">The Stretch Energy Code by City</div>
+        <div class = "map-header">The Stretch Energy Code by City</div>
         <div class = "map-image">
         	<img src="/images/MA_map.png" alt="Massachusetts map">
         </div>            
