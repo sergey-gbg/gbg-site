@@ -19,40 +19,44 @@ $(function() {
 
 <html>
 
-<body id="check_code_form"> 
+<body id="check_code_form" onload="displayCity"> 
 	
 	<script type="text/javascript">
-	
 		
-		function checkStatusByCity(){
+		function displayCity{
+			var city = document.getElementById("geo-city");
+			alert(city);
+		}
 		
-			var city = document.forms["checkcodeform"]["citylist"].value;
-			var city_msg = document.getElementById("city");
-			var msg = ""
-
-			if city == 'none'{
-				city_msg.innerHTML = "Please, select city or enter your zip code"
-			}
-			else{
-				city_msg.innerHTML = city
-				msg = <?=getShortCityStatus($city, ,"The Stretch Energy Code ");?>
-			}
-			
-			displayMessage(msg)
-		}
-
-		function checkStatusByZip(){
+		// function checkStatusByCity(){
 		
-			var zip = document.forms["checkcodeform"]["zipcode"].value;
-			
-			checkStatusByCity()
-			
-		}
+		// 	var city = document.forms["checkcodeform"]["citylist"].value;
+		// 	var city_msg = document.getElementById("city");
+		// 	var msg = "";
 
-		function displayMessage(msg){
-			var msg = document.getElementById("msg");
-			msg.innerHTML = msg
-		}
+		// 	if city == 'none'{
+		// 		city_msg.innerHTML = "Please, select city or enter your zip code"
+		// 	}
+		// 	else{
+		// 		city_msg.innerHTML = city;
+		// 		msg = <?=getShortCityStatus($city, ,"The Stretch Energy Code ");?>
+		// 	}
+			
+		// 	displayMessage(msg);
+		// }
+
+		// function checkStatusByZip(){
+		
+		// 	var zip = document.forms["checkcodeform"]["zipcode"].value;
+			
+		// 	checkStatusByCity();
+			
+		// }
+
+		// function displayMessage(msg){
+		// 	var msg = document.getElementById("msg");
+		// 	msg.innerHTML = msg;
+		// }
 					
 	</script>
 		
@@ -72,7 +76,7 @@ $(function() {
 				<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
 				<select id="citylist" name="citylist" size="1"  style="width: 180px;"></select>
 				<option value="none"> - - Select - -</option>
-				<?$city_zip_data=getCityZipInfo()?>
+				<?$city_zip_data=getCityZipInfo();?>
 				<?foreach ($city_zip_data as $value){?>
 					<option value="<?=$value[1]?>"><?=$value[1]?></option>
 				<?}?>

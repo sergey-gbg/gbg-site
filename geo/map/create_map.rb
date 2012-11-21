@@ -15,13 +15,14 @@ rescue Exception => msg
 end
 
 city_data = z.split(/\n/)
-
+text_info_zip = ''
 zips = {}
 city_data.each do |row|
   zip = row.match(/^\d{5}/)
   city = row.match(/(?<=\d{5} ).*(?= \()/)
 
   zips[zip[0]] = city[0].downcase unless zip.nil? || city.nil?
+  text_info_zip += city[0].downcase + ',' + zip[0] + "\n"
 end
 
 cities = zips.values.uniq
@@ -33,6 +34,7 @@ links = {}
 towns_data = s.split(/\n/)
 
 text_info = ''
+
 
 count = 0
 towns_data.each do |row|
@@ -49,12 +51,19 @@ towns_data.each do |row|
     links[data[0].downcase] = mun
 
     text_info += data[0].downcase + ',' + mun + "\n"
+    zip = zips.map{ |k,v| v==data[0].downcase ? k : nil }.compact
+
+    
   end
 
 end
 
 File.open("CityMunicipality.csv", "w") do |f|
   f.write text_info
+end
+
+File.open("CityZip.csv", "w") do |f|
+  f.write text_info_zip
 end
 
 text_info = ''

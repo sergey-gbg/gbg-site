@@ -93,6 +93,7 @@ function getMunicipality($city){
 	return ucfirst($info);
 }
 
+
 function getCityZipInfo(){
 	$data = getDataFromFile("CityZip.csv");
 	return $data;
