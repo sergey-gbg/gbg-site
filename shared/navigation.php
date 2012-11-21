@@ -37,20 +37,23 @@
 		
 	</div> <!-- end div.square3 -->
 	
-	<div id="map">
-		<div class="green bold">new Stretch Code</div>
-		<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
-					
-		<div class="check_code">
-			<a href="#?w=400" rel="popup_check_code" class="poplight" >Check your city now!</a>
-		</div>
-		
-		<div class="city_info">
-			<?$city=getCityByIp(getRealIpAddr());?> 
-			<div><?=$city;?>:</div>
-			<div><?=getShortCityStatus($city);?></div>
-		</div>
-	</div>
+	<div class="map">
+        <div style = "map-header">The Stretch Energy Code by City</div>
+        <div class = "map-image">
+        	<img src="/images/MA_map.png" alt="Massachusetts map">
+        </div>            
+        <div class="check_code">
+            <?$city=getCityByIp(getRealIpAddr());?>
+            <div><?=$city;?></div>
+            <a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 12px">(change)</a>
+        </div>
+        
+        <div class="city_info">
+            <?$status=getShortCityStatus($city);?>  
+            <div><?=$status;?></div>
+        </div>
+    </div>
+
 </div> <!-- end div.left -->
 
 <!-- Client Login and Logo -->

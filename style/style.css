@@ -276,46 +276,55 @@ body {
 
 #map
 {
-    margin: 0 0 0 57px;
-    font-size: 14px;
+    display: block;
+    border: 1px dashed #ccc;
+    
+    margin: 10px 25px 5px 57px;
+    padding: 8px 5px 25px 5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+
+    font-size: 16px;
     font-style: italic;
     font-family: georgia;
-   /* color: #666;*/
+    color: #666;
     text-align: left;
-    float: left;
-	width: 262px;
+    float: center;
+}
+
+img.MA_map
+{
+  margin: 0; 
+  width: 212px; 
+  z-index:-1;
 }
 
 #map div.check_code
 {
-   margin: -30px 0 0 0; 
+   margin: -40px 0 0 0;
+   position:absolute; 
    z-index: 99;
 }
+
+#map div.map-header
+{
+  text-align: center;
+}
+
+#map div.map-image
+{
+  text-align: center;
+}
+
 
 #map div.city_info
 {
    margin-top: 0px; 
    position:absolute; 
    z-index: 99;  
-   font-size:10px; 
-   width: 262px;
-   color:#0099cc;
-   font-weight: bold;
-}
-
-#map div.check_code
-{
-   margin: -30px 0 0 0; 
-   z-index: 99;
-}
-
-#map div.city_info
-{
-   margin-top: 0px; 
-   position:absolute; 
-   z-index: 99;  
-   font-size:10px; 
-   width: 262px;
+   font-size:15px; 
+   width: 212px;
    color:#0099cc;
    font-weight: bold;
 }
@@ -418,33 +427,6 @@ img.logo
 	position: absolute;
 }
 
-div.map
-{
-    display: block;
-    border: 1px dashed #ccc;
-    
-    margin: 10px 25px 5px 57px;
-    padding: 8px 5px 25px 5px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-
-    font-size: 16px;
-    font-style: italic;
-    font-family: georgia;
-    color: #666;
-    text-align: left;
-    float: center;
-    
-}
-
-
-img.MA_map
-{
-  margin: 0; 
-  width: 212px; 
-  z-index:-1;
-}
 
 /* ######### CHECK CODE FORM (END) ##########*/
 
