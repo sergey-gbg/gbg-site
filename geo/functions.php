@@ -23,7 +23,7 @@ function getRealIpAddr()
 function getCityByIp($ipaddress)
 {
 	$city = "";
-	$license_key = "t02mRhn5IlI6";
+	$license_key = "hKrySYTmrhso";
 	$query = "http://geoip.maxmind.com/f?l=" . $license_key . "&i=" . $ipaddress;
 	$url = parse_url($query);
 	$host = $url["host"];
