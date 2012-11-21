@@ -300,7 +300,7 @@ img.MA_map
   z-index:-1;
 }
 
-#check_code
+div.check_code
 {
    margin: -40px 0 0 0;
    position:absolute; 
@@ -318,7 +318,7 @@ div.map-image
 }
 
 
-#city_info
+div.city_info
 {
    margin-top: 0px; 
    position:absolute; 

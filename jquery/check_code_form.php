@@ -4,11 +4,16 @@
 <link rel="stylesheet" type="text/css" href="/style/style.css" />
 <link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
 
+<link rel="stylesheet" href="/jquery/bootstrap/bootstrap-tab.css" type="text/css">
+
 <!-- ### list of scripts for geotargeting -->
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
 <script src="/jquery/jtabs/jquery.js" type="text/javascript"></script>
 <script src="/jquery/jtabs/jquery.history_remote.pack.js" type="text/javascript"></script>
 <script src="/jquery/jtabs/jquery.tabs.pack.js" type="text/javascript"></script>
+
+<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 $(function() {
  	$('#container-data').tabs({ fxAutoHeight: true });
@@ -169,42 +174,43 @@ $(function() {
 			var msg = document.getElementById("msg");
 			msg.style.color = "black";
 			msg.innerHTML = checkCityStatus(city);
+			var city_info = document.getElementById("city");
+			city_info.innerHTML = city;
 		}
+
+		$('#checkTab a').click(function (e) {
+		  e.preventDefault();
+		  $(this).tab('show');
+		})
 					
 	</script>
 		
 	
 <form name="checkcodeform" id="checkcodeform" method="post" >
-	<div class="contact_pop">
 
-		<div id="container-data">
-			<ul>
-				<li><a href="#fragment-city"><span>City</span></a></li>
-				<li><a href="#fragment-zip"><span>Zip</span></a></li>
-			 
-			</ul>
-			<div id="fragment-city">
-				<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
-				<select id="citylist" name="citylist" size="1"  style="width: 180px;"></select>
-				<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
-			  
-			</div>
-			<div id="fragment-zip">
-				<label for="zipcode" style="width:130px; line-height: 16px;">Enter your zip code:</label>
-				<input  class="small" type="text" name="zipcode" maxlength="30" size="5" width="150px; line-height: 16px;">
-				<input class="contact_button" name="check_zip" type="button" value="Check!" onClick="checkStatusByZip()"> 
-			</div>
-
-		</div>
-		
-		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
-		<div id="city" class="city-info"></div>
-		<div id="msg" class="city-info">No information avaliable</div>
-		<a href="#" class="poplight" style="font-size: 12px">(more)</a>
-		  
-	  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
+	<ul class="nav nav-tabs" id="checkTab">
+	  <li class="active"><a href="#tab-city">City</a></li>
+	  <li><a href="#tab-zip">Zip</a></li>	  
+	</ul>
+	 
+	<div class="tab-content">
+	  <div class="tab-pane active" id="tab-city">
+	  	<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
+			<select id="citylist" name="citylist" size="1"></select>
+			<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
+	  </div>
+	  <div class="tab-pane" id="tab-zip">
+	  	<label for="zipcode" style="width:130px; line-height: 16px;">Enter your zip code:</label>
+			<input  class="small" type="text" name="zipcode" maxlength="30" size="5">
+			<input class="contact_button" name="check_zip" type="button" value="Check!" onClick="checkStatusByZip()"> 
+	  </div>	  
 	</div>
-	
+
+	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
+	<div id="city" style="font-size:15px;color:#0099cc;font-weight: bold;"></div>
+	<div id="msg" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
+	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
+		  
 
 </form>
 
