@@ -61,7 +61,7 @@ function getShortCityStatus($city){
 	$i = 0;
 	foreach ($data as $value){
 	
-		if ($value[0] == strtolower($city)){
+		if (strtolower($value[0]) == strtolower($city)){
 	
 			$date = $value[1];
 			$info = "In effect since " . $date;
@@ -82,7 +82,7 @@ function getMunicipality($city){
 	
 	foreach ($data as $value){
 	
-		if ($value[0] == strtolower($city)){
+		if (strtolower($value[0]) == strtolower($city)){
 	
 			$info=$value[1];
 			break;
