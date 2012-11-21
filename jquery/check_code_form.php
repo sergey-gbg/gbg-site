@@ -25,8 +25,9 @@ $(function() {
 		
 		function displayCity{
 			var city = document.getElementById("geo-city");
-			alert(city);
+			alert(city.value);
 		}
+
 		
 		// function checkStatusByCity(){
 		
@@ -60,51 +61,8 @@ $(function() {
 					
 	</script>
 		
+	<div>test</div>
 
-
-<form name="checkcodeform" id="checkcodeform" method="post" >
-	<div class="contact_pop">
-
-		<div id="container-data">
-			<ul>
-				<li><a href="#fragment-city"><span>City</span></a></li>
-				<li><a href="#fragment-zip"><span>Zip</span></a></li>
-			 
-			</ul>
-			<div id="fragment-city">
-				
-				<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
-				<select id="citylist" name="citylist" size="1"  style="width: 180px;"></select>
-				<option value="none"> - - Select - -</option>
-				<?$city_zip_data=getCityZipInfo();?>
-				<?foreach ($city_zip_data as $value){?>
-					<option value="<?=$value[1]?>"><?=$value[1]?></option>
-				<?}?>
-
-				<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
-			  
-			</div>
-			<div id="fragment-zip">
-				<label for="zipcode" style="width:130px; line-height: 16px;">Enter your zip code:</label>
-				<input  class="small" type="text" name="zipcode" maxlength="30" size="5" width="150px; line-height: 16px;">
-				<input class="contact_button" name="check_zip" type="button" value="Check!" onClick="checkStatusByZip()"> 
-			</div>
-
-		</div>
-		
-<!-- 		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
-		<?$city=getCityByIp(getRealIpAddr());?> -->
-		<div id = "city">Please, select city or zip</div>
-		<div class="city_info">
-      <div id = "msg"><?=getShortCityStatus($city, "","The Stretch Energy Code ");?></div>
-      <a href="#" class="poplight" style="font-size: 12px">(more info)</a>
-    </div>
-	  
-	  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
-	</div>
-	
-
-</form>
 
 
 </body>
