@@ -196,10 +196,10 @@ $(function() {
 		</div>
 		
 		<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
-		<?$city=getCityByIp(getRealIpAddr());?>
-		<div id="msg"><?=getInfoByCity($city);?></div>
-		<div id="test">don't work</div>
-	  
+		<div id="city" class="city-info"></div>
+		<div id="msg" class="city-info">No information avaliable</div>
+		<a href="#" class="poplight" style="font-size: 12px">(more)</a>
+		  
 	  <!--<p id="error">There were errors on the form, please make sure all fields are fill out correctly.</p>-->
 	</div>
 	

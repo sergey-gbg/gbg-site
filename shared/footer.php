@@ -67,7 +67,7 @@
 
           var frame = document.getElementById("check_code_form");
           var frameDoc = frame.contentDocument || frame.contentWindow.document;
-          frameDoc.getElementById("test").innerHTML = "work!"
+          frameDoc.getElementById("city").innerHTML = document.getElementById("geo-city").innerHTML
 
     			//Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
@@ -95,8 +95,7 @@
 		$('a.close, #fade').live('click', function() { //When clicking on the close or fade layer...
           var frame = document.getElementById("check_code_form");
           var frameDoc = frame.contentDocument || frame.contentWindow.document;
-          alert("test");
-          alert(frameDoc.getElementById("msg").innerHTML);
+          document.getElementById("geo-city").innerHTML = frameDoc.getElementById("city").innerHTML;
     			$('#fade , .popup_block').fadeOut(function() {
             $('#fade, a.close').remove();  //fade them both out
     			});
