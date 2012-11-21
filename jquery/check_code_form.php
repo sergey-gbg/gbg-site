@@ -186,7 +186,7 @@ $(function() {
 	</script>
 		
 	
-<form name="checkcodeform" id="checkcodeform" method="post" >
+<div>
 
 	<ul class="nav nav-tabs" id="checkTab">
 	  <li class="active"><a href="#tab-city">City</a></li>
@@ -212,7 +212,7 @@ $(function() {
 	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
 		  
 
-</form>
+</div>
 
 
 </body>
