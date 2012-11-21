@@ -68,6 +68,10 @@
     			//Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
 
+          var frame = document.getElementById("check_code_form");
+          var frameDoc = frame.contentDocument || frame.contentWindow.document;
+          frameDoc.getElementById("test").innerHTML = "work!"
+
     			//Define margin for center alignment (vertical   horizontal) - we add 80px to the height/width to accomodate for the padding  and border width defined in the css
     			var popMargTop = ($('#' + popID).height() + 80) / 2;
     			var popMargLeft = ($('#' + popID).width() + 80) / 2;
