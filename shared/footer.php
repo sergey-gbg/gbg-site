@@ -88,6 +88,9 @@
 		//Close Popups and Fade Layer
 		$('a.close, #fade').live('click', function() { //When clicking on the close or fade layer...
     			$('#fade , .popup_block').fadeOut(function() {
+            var frame = document.getElementById("check_code_form");
+            var frameDoc = frame.contentDocument || frame.contentWindow.document;
+            alert(frameDoc.etElementById("msg").innerHTML);
         		$('#fade, a.close').remove();  //fade them both out
     			});
     				return false;

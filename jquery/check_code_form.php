@@ -33,11 +33,6 @@ $(function() {
 			
 			var citylist = document.forms["checkcodeform"]["citylist"];
 			var arr, selected, opt, i=0;
-
-			var tp = document.getElementById("geo-city");
-
-			alert("test");
-			alert(tp.innerHTML);
 						
 			// Download data from the table: city | status | effective date.
 		<?
@@ -45,11 +40,11 @@ $(function() {
 			while (($arr = fgetcsv($fd1, 1024, ";")) !== FALSE) {
 				$data[] = $arr;
 			}
-
+				
 			$city = getCityByIp(getRealIpAddr());
 			$arr = split(" ", $city); //in case the name of the city consists of 2 words
 		    $city = $arr[0];
-
+					
 			foreach ($data as $value){?>
 				<?if($city==$value[0]){?>selected = true;<?}else{?>selected = false;<?}?>
 				citylist.options[i] = new Option("<?=$value[0]?>", "<?=$value[0]?>", selected, selected); 
@@ -88,11 +83,6 @@ $(function() {
 			
 			var arr = city.split(" ", 2); //in case the name of the city consists of 2 words
 		    city = arr[0];
-
-		  var tp = document.getElementById("geo-city");
-
-			alert("test2");
-			alert(tp.innerHTML);
 			
 			// Download data from the table: city | status | effective date.
 			<?
