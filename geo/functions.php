@@ -70,7 +70,7 @@ function getShortCityStatus($city, $default = "Not in effect", $prefix = ""){
 
 	if (empty($info)) $info = $default;
 
-	if !(empty($info)) $info = $prefix . $info;
+	if (! empty($info)) $info = $prefix . $info;
 	
 	return $info;
 }
