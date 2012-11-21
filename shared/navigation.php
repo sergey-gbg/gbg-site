@@ -15,10 +15,10 @@
 	<div class="square2">
 		<div class="menu">
 			<ul>         
-        <a href="/architects-builders/"><li id="contractors">Architects & Builders</li></a>
-        <a href="/homeowners/"><li id="homeowners">Homeowners</li></a>
-        <a href="/incentives/"><li id="incentives">Incentives</li></a>        
-        <a href="/team/"><li id="team">Our Team</li></a>          
+        <li id="contractors"><a id="contractors_ref" href="/architects-builders/">Architects & Builders</a></li>
+        <li id="homeowners"><a id="homeowners_ref" href="/homeowners/">Homeowners</a></li>
+        <li id="incentives"><a id="incentives_ref" href="/incentives/">Incentives</a></li>        
+        <li id="team"><a id="team_ref" href="/team/">Our Team</a></li>          
 			</ul>
 		</div> <!-- end div.menu -->
 	</div> <!-- end div.square2 -->
@@ -37,19 +37,18 @@
 		
 	</div> <!-- end div.square3 -->
 	
-	<div class="map">
-		<div>The Stretch Energy Code by City</div>
+	<div id="map">
+		<div class="green bold">new Stretch Code</div>
 		<img src="/images/MA_map.png" alt="Massachusetts map" class="MA_map" >
 					
-		<div class="check_code" style="margin-top: -40px; position:absolute; z-index: 99; ">
-			<?$city=getCityByIp(getRealIpAddr());?>
-			<div><?=$city;?></div>
-			<a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 12px">(change)</a>
+		<div class="check_code">
+			<a href="#?w=400" rel="popup_check_code" class="poplight" >Check your city now!</a>
 		</div>
 		
-		<div class="blue bold" style="margin-top: 0px; position:absolute; z-index: 99;  font-size:15px; width: 212px;">
-			<?getShortCityStatus($city);?>	
-			<div>In effect since Oct-11 2010</div>
+		<div class="city_info">
+			<?$city=getCityByIp(getRealIpAddr());?> 
+			<div><?=$city;?>:</div>
+			<div><?=getShortCityStatus($city);?></div>
 		</div>
 	</div>
 </div> <!-- end div.left -->
