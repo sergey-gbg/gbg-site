@@ -41,7 +41,7 @@ towns_data.each do |row|
   
   data = row.split(/ \/ /)
 
-  if cities.include? data[0].downcase
+  if cities.include?(data[0].downcase) || cities.include?(data[1].downcase)
 
     mun = data[1].downcase
     mun = 'boston' if data[1].downcase =~ /annexed.*to.*boston/i
