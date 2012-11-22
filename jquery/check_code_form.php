@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <!-- ### Stylesheet ### -->
-<link rel="stylesheet" type="text/css" href="/style/style.css" />
+
 <link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
 
 <link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
@@ -189,20 +189,24 @@ $(function() {
 <div>
 
 	<ul class="nav nav-tabs" id="checkTab">
-	  <li class="active"><a href="#tab-city">City</a></li>
-	  <li><a href="#tab-zip">Zip</a></li>	  
+	  <li class="active"><a href="#tabcity">City</a></li>
+	  <li><a href="#tabzip">Zip</a></li>	  
 	</ul>
 	 
 	<div class="tab-content">
-	  <div class="tab-pane active" id="tab-city">
-	  	<label for="citylist" style="width:100px; line-height: 16px;">Select your city</label>
-			<select id="citylist" name="citylist" size="1"></select>
-			<input class="contact_button" name="check_city" type="button" value="Check!" onClick="checkStatusByCity()"> 
+	  <div class="tab-pane active" id="tabcity">
+	  	<form class="form-inline">
+  			<label for="citylist">Select your city</label>
+				<select id="citylist" type="text" class="input-small" placeholder="City"></select>
+			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
+			</form>	
 	  </div>
-	  <div class="tab-pane" id="tab-zip">
-	  	<label for="zipcode" style="width:130px; line-height: 16px;">Enter your zip code:</label>
-			<input  class="small" type="text" name="zipcode" maxlength="30" size="5">
-			<input class="contact_button" name="check_zip" type="button" value="Check!" onClick="checkStatusByZip()"> 
+	  <div class="tab-pane" id="tabzip">
+	  	<form class="form-inline">
+  			<label>Enter zip code</label>
+				<input id="zipcode" type="text" class="input-small" placeholder="Zip"></input>
+			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
+			</form>
 	  </div>	  
 	</div>
 
