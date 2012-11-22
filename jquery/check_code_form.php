@@ -2,24 +2,12 @@
 
 <!-- ### Stylesheet ### -->
 
-<link rel="stylesheet" href="/jquery/jtabs/jquery.tabs.css" type="text/css" media="print, projection, screen">
-
 <link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
 
 <!-- ### list of scripts for geotargeting -->
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
-<script src="/jquery/jtabs/jquery.js" type="text/javascript"></script>
-<script src="/jquery/jtabs/jquery.history_remote.pack.js" type="text/javascript"></script>
-<script src="/jquery/jtabs/jquery.tabs.pack.js" type="text/javascript"></script>
 
 <script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-$(function() {
- 	$('#container-data').tabs({ fxAutoHeight: true });
-});
-</script>
-
 
 
 <html>
@@ -180,24 +168,24 @@ $(function() {
 <form name="checkcodeform" id="checkcodeform" method="post" >
 
 	<ul class="nav nav-tabs" id="checkTab">
-	  <li><a href="#tabcity" data-toggle="tab">City</a></li>
+	  <li class="active"><a href="#tabcity" data-toggle="tab">City</a></li>
 	  <li><a href="#tabzip" data-toggle="tab">Zip</a></li>	  
 	</ul>
 	 
 	<div class="tab-content">
 	  <div class="tab-pane active" id="tabcity">
-	  	<div class="form-inline">
+	  	<form class="form-inline">
   			<label for="citylist">Select your city</label>
 				<select id="citylist" type="text" class="input-medium" placeholder="City"></select>
 			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
-			</div>	
+			</form>	
 	  </div>
 	  <div class="tab-pane" id="tabzip">
-	  	<div class="form-inline">
+	  	<form class="form-inline">
   			<label>Enter zip code</label>
 				<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
 			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
-			</div>
+			</form>
 	  </div>	  
 	</div>
 
