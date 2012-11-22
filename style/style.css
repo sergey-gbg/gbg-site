@@ -302,7 +302,7 @@ img.MA_map
 
 div.check_code
 {
-   margin: -40px 0 0 
+   margin: -40px 0 0 0;
    position:absolute; 
    z-index: 99;
 }

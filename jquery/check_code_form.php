@@ -27,7 +27,12 @@ $(function() {
 <body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
 	
 	<script type="text/javascript">
-	
+		
+		$('#checkTab a').click(function (e) {
+		  e.preventDefault();
+		  $(this).tab('show');
+		})
+
 		function clear_color() {
 			document.forms["checkcodeform"]["zipcode"].style.background = "white";
 			
@@ -108,7 +113,7 @@ $(function() {
 				
 			// Search of the city in the downloaded table.
 			var size = <?=($i - 1)?>;
-			status_msg = "Not in effect"
+			status_msg = "Not in effect";
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
@@ -178,10 +183,6 @@ $(function() {
 			city_info.innerHTML = city;
 		}
 
-		$('#checkTab a').click(function (e) {
-		  e.preventDefault();
-		  $(this).tab('show');
-		})
 					
 	</script>
 		
