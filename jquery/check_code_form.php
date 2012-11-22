@@ -6,6 +6,7 @@
 <head>
 	<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
 	<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
+	<script src="/jquery/bootstrap/jquery.js" type="text/javascript"></script>
 </head>
 
 <body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
@@ -188,14 +189,14 @@
 	</ul>
 	 
 	<div class="tab-content">
-	  <div class="tab-pane active" id="tabcity">
+	  <div class="tab-pane fade active in" id="tabcity">
 	  	<form class="form-inline">
   			<label for="citylist">Select your city</label>
 				<select id="citylist" type="text" class="input-large" placeholder="City"></select>
 			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
 			</form>	
 	  </div>
-	  <div class="tab-pane" id="tabzip">
+	  <div class="tab-pane fade" id="tabzip">
 	  	<form class="form-inline">
   			<label>Enter zip code</label>
 				<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
