@@ -1,16 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<!-- ### Stylesheet ### -->
-
-<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
-
-<!-- ### list of scripts for geotargeting -->
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
 
-<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
-
-
 <html>
+<head>
+	<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
+	<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
+</head>
 
 <body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
 	
