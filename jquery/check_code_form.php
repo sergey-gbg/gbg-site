@@ -182,7 +182,7 @@ $(function() {
 	</script>
 		
 	
-<div>
+<form name="checkcodeform" id="checkcodeform" method="post" >
 
 	<ul class="nav nav-tabs" id="checkTab">
 	  <li class="active"><a href="#tabcity">City</a></li>
@@ -193,14 +193,14 @@ $(function() {
 	  <div class="tab-pane active" id="tabcity">
 	  	<form class="form-inline">
   			<label for="citylist">Select your city</label>
-				<select id="citylist" type="text" class="input-small" placeholder="City"></select>
+				<select id="citylist" type="text" class="input-large" placeholder="City"></select>
 			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
 			</form>	
 	  </div>
 	  <div class="tab-pane" id="tabzip">
 	  	<form class="form-inline">
   			<label>Enter zip code</label>
-				<input id="zipcode" type="text" class="input-small" placeholder="Zip"></input>
+				<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
 			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
 			</form>
 	  </div>	  
@@ -212,7 +212,7 @@ $(function() {
 	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
 		  
 
-</div>
+</form>
 
 
 </body>
