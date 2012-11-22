@@ -27,11 +27,6 @@ $(function() {
 <body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
 	
 	<script type="text/javascript">
-		
-		$('#checkTab a').click(function (e) {
-		  e.preventDefault();
-		  $(this).tab('show');
-		})
 
 		function clear_color() {
 			document.forms["checkcodeform"]["zipcode"].style.background = "white";
@@ -185,24 +180,24 @@ $(function() {
 <form name="checkcodeform" id="checkcodeform" method="post" >
 
 	<ul class="nav nav-tabs" id="checkTab">
-	  <li class="active"><a href="#tabcity">City</a></li>
-	  <li><a href="#tabzip">Zip</a></li>	  
+	  <li><a href="#tabcity" data-toggle="tab">City</a></li>
+	  <li><a href="#tabzip" data-toggle="tab">Zip</a></li>	  
 	</ul>
 	 
 	<div class="tab-content">
 	  <div class="tab-pane active" id="tabcity">
-	  	<form class="form-inline">
+	  	<div class="form-inline">
   			<label for="citylist">Select your city</label>
-				<select id="citylist" type="text" class="input-large" placeholder="City"></select>
+				<select id="citylist" type="text" class="input-medium" placeholder="City"></select>
 			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
-			</form>	
+			</div>	
 	  </div>
 	  <div class="tab-pane" id="tabzip">
-	  	<form class="form-inline">
+	  	<div class="form-inline">
   			<label>Enter zip code</label>
-				<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
+				<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
 			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
-			</form>
+			</div>
 	  </div>	  
 	</div>
 

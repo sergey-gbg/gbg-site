@@ -29,7 +29,7 @@
               src="/jquery/contact_form.php"
               width="99%"
               frameborder="0"
-              height="310px"
+              height="350px"
               marginheight="0"
               marginwidth="0">
           </iframe> 
