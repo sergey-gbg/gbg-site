@@ -50,11 +50,11 @@ $(function() {
 			while (($arr = fgetcsv($fd1, 1024, ";")) !== FALSE) {
 				$data[] = $arr;
 			}
-				
-			$city = "";
+
+			$city = getCityByIp(getRealIpAddr());
 			$arr = split(" ", $city); //in case the name of the city consists of 2 words
 		    $city = $arr[0];
-					
+
 			foreach ($data as $value){?>
 				<?if($city==$value[0]){?>selected = true;<?}else{?>selected = false;<?}?>
 				citylist.options[i] = new Option("<?=$value[0]?>", "<?=$value[0]?>", selected, selected); 
@@ -113,17 +113,15 @@ $(function() {
 				
 			// Search of the city in the downloaded table.
 			var size = <?=($i - 1)?>;
-			status_msg = "Not in effect";
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
-					status_msg = "In effect since " + citystatus[i]["date"];
+					status_msg = "" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"];
 					return status_msg;
-				}				
+				}
 			}
 				
-
-			//status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
+			status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
 			return status_msg;
 		}
 		
@@ -179,10 +177,7 @@ $(function() {
 			var msg = document.getElementById("msg");
 			msg.style.color = "black";
 			msg.innerHTML = checkCityStatus(city);
-			var city_info = document.getElementById("city");
-			city_info.innerHTML = city;
 		}
-
 					
 	</script>
 		
