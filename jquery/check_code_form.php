@@ -70,7 +70,7 @@
 		function checkCityStatus(city){
 		
 			var citystatus = new Array();
-			var status_msg = "";
+			var status_msg = "Not in effect";
 			
 			var arr = city.split(" ", 2); //in case the name of the city consists of 2 words
 		    city = arr[0];
@@ -97,12 +97,12 @@
 			for (i = 0; i < size; i++){
 				if (citystatus[i]["city"] == city){
 					arr = (citystatus[i]["status"]).split("adopted", 2);
-					status_msg = "" + citystatus[i]["city"] + " " + arr[0] + "adopted Stretch Code on" + arr[1] + ". Effective date is " + citystatus[i]["date"];
+					status_msg = "In effect since " + citystatus[i]["date"];
 					return status_msg;
 				}
 			}
 				
-			status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
+			//status_msg = "" + city + " have not adopted Stretch code yet. Please see homeowners page for more information.";
 			return status_msg;
 		}
 		
@@ -158,29 +158,12 @@
 			var msg = document.getElementById("msg");
 			msg.style.color = "black";
 			msg.innerHTML = checkCityStatus(city);
+			var city_msg = document.getElementById("city");
+			city_msg.innerHTML = city;
 		}
 					
 	</script>
 
-<ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#home">Home</a></li>
-  <li><a href="#profile">Profile</a></li>
-  <li><a href="#messages">Messages</a></li>
-  <li><a href="#settings">Settings</a></li>
-</ul>
- 
-<div class="tab-content">
-  <div class="tab-pane active" id="home">h</div>
-  <div class="tab-pane" id="profile">p</div>
-  <div class="tab-pane" id="messages">m.</div>
-  <div class="tab-pane" id="settings">s</div>
-</div>
- 
-<script>
-  $(function () {
-    $('#myTab a:last').tab('show');
-  })
-</script>		
 	
 <form name="checkcodeform" id="checkcodeform" method="post" >
 
@@ -191,25 +174,25 @@
 	 
 	<div class="tab-content">
 	  <div class="tab-pane fade active in" id="tabcity">
+	  	<label for="citylist">Select your city</label>
 	  	<form class="form-inline">
-  			<label for="citylist">Select your city</label>
-				<select id="citylist" type="text" class="input-large" placeholder="City"></select>
+  			<select id="citylist" type="text" class="input-medium" placeholder="City"></select>
 			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
 			</form>	
 	  </div>
 	  <div class="tab-pane fade" id="tabzip">
+	  	<label>Enter zip code</label>
 	  	<form class="form-inline">
-  			<label>Enter zip code</label>
-				<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
+  			<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
 			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
 			</form>
 	  </div>	  
 	</div>
 
-	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
 	<div id="city" style="font-size:15px;color:#0099cc;font-weight: bold;"></div>
 	<div id="msg" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
 	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
+	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
 		  
 
 </form>
