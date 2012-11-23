@@ -175,17 +175,17 @@
 	<div class="tab-content">
 	  <div class="tab-pane fade active in" id="tabcity">
 	  	<label for="citylist">Select your city</label>
-	  	<form class="form-inline">
-  			<select id="citylist" type="text" class="input-medium" placeholder="City"></select>
-			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
-			</form>	
+	  	<div class="form-inline">
+  			<select id="citylist" type="text" class="input-medium" style="margin-bottom: 0px" placeholder="City"></select>
+			  <button class="btn" onClick="checkStatusByCity()">Check!</button>
+			</div>	
 	  </div>
 	  <div class="tab-pane fade" id="tabzip">
 	  	<label>Enter zip code</label>
-	  	<form class="form-inline">
+	  	<div class="form-inline">
   			<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
-			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
-			</form>
+			  <button class="btn" onClick="checkStatusByZip()">Check!</button>
+			</div>
 	  </div>	  
 	</div>
 
