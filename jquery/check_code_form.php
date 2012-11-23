@@ -167,7 +167,7 @@
 	
 <form name="checkcodeform" id="checkcodeform" method="post" >
 
-	<ul class="nav nav-tabs" id="checkTab">
+	<ul class="nav nav-tabs" style="margin-bottom: 0px" id="checkTab">
 	  <li class="active"><a href="#tabcity" data-toggle="tab">City</a></li>
 	  <li><a href="#tabzip" data-toggle="tab">Zip</a></li>	  
 	</ul>
@@ -176,24 +176,31 @@
 	  <div class="tab-pane fade active in" id="tabcity">
 	  	<label for="citylist">Select your city</label>
 	  	<div class="form-inline">
-  			<select id="citylist" type="text" class="input-medium" style="margin-bottom: 0px" placeholder="City"></select>
-			  <button class="btn" onClick="checkStatusByCity()">Check!</button>
+  			<select id="citylist" type="text" style="margin-bottom: 0px" placeholder="City"></select>
+			  <a href="#" class="btn" onClick="checkStatusByCity()">Check!</a>
 			</div>	
 	  </div>
 	  <div class="tab-pane fade" id="tabzip">
 	  	<label>Enter zip code</label>
 	  	<div class="form-inline">
   			<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
-			  <button class="btn" onClick="checkStatusByZip()">Check!</button>
+			  <a href="#" class="btn" onClick="checkStatusByZip()">Check!</a>
 			</div>
 	  </div>	  
 	</div>
 
-	<div id="city" style="font-size:15px;color:#0099cc;font-weight: bold;"></div>
+	<div style="margin-top: 50px;font-size:16px;color:#666;font-style: italic;font-family: georgia;">
+		<p>The Stretch Energy Code Status</p>
+	</div>
+	<div id="city" style="50px;font-size:16px;color:#666;font-style: italic;font-family: georgia;">
+		Boston
+	</div>
+
 	<div id="msg" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
 	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
+	<div>
 	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
-		  
+	</div>	  
 
 </form>
 
