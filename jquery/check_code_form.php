@@ -165,9 +165,9 @@
 	</script>
 
 	
-<form name="checkcodeform" id="checkcodeform" method="post" >
+<form name="checkcodeform" id="checkcodeform" method="post" style="font-size:16px;color:#666;font-style: italic;font-family: georgia;">
 
-	<ul class="nav nav-tabs" style="margin-bottom: 0px" id="checkTab">
+	<ul class="nav nav-tabs" style="margin-bottom: 10px" id="checkTab">
 	  <li class="active"><a href="#tabcity" data-toggle="tab">City</a></li>
 	  <li><a href="#tabzip" data-toggle="tab">Zip</a></li>	  
 	</ul>
@@ -189,15 +189,15 @@
 	  </div>	  
 	</div>
 
-	<div style="margin-top: 50px;font-size:16px;color:#666;font-style: italic;font-family: georgia;">
+	<div style="margin-top: 10px;">
 		<p>The Stretch Energy Code Status</p>
 	</div>
-	<div id="city" style="50px;font-size:16px;color:#666;font-style: italic;font-family: georgia;">
+	<div id="city">
 		Boston
 	</div>
 
 	<div id="msg" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
-	<a href="#" class="poplight" style="font-size: 12px">(more)</a>
+	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66">(more)</a>
 	<div>
 	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
 	</div>	  
