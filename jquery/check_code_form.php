@@ -2,22 +2,12 @@
 
 <? include($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
 
-<script src="/jquery/jtabs/jquery.js" type="text/javascript"></script>
-<script src="/jquery/jtabs/jquery.history_remote.pack.js" type="text/javascript"></script>
-<script src="/jquery/jtabs/jquery.tabs.pack.js" type="text/javascript"></script>
-<script type="text/javascript">
-$(function() {
- 	$('#container-data').tabs({ fxAutoHeight: true });
-});
-</script>
-
-
 <html>
 <head>
 	<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
+	<script src="/jquery/bootstrap/jquery.js" type="text/javascript"></script>
+	<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
 	
-
-
 </head>
 
 <body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
@@ -171,32 +161,49 @@ $(function() {
 		}
 					
 	</script>
-		
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#home">Home</a></li>
+  <li><a href="#profile">Profile</a></li>
+  <li><a href="#messages">Messages</a></li>
+  <li><a href="#settings">Settings</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="home">h</div>
+  <div class="tab-pane" id="profile">p</div>
+  <div class="tab-pane" id="messages">m.</div>
+  <div class="tab-pane" id="settings">s</div>
+</div>
+ 
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show');
+  })
+</script>		
 	
 <form name="checkcodeform" id="checkcodeform" method="post" >
 
-	<div id="container-data">
-		<ul class="nav nav-tabs" id="checkTab">
-		  <li><a href="#tabcity">City</a></li>
-		  <li><a href="#tabzip">Zip</a></li>	  
-		</ul>
-		 
-		<div class="tab-content">
-		  <div class="tab-pane fade" id="tabcity">
-		  	<form class="form-inline">
-	  			<label for="citylist">Select your city</label>
-					<select id="citylist" type="text" class="input-large" placeholder="City"></select>
-				  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
-				</form>	
-		  </div>
-		  <div class="tab-pane fade" id="tabzip">
-		  	<form class="form-inline">
-	  			<label>Enter zip code</label>
-					<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
-				  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
-				</form>
-		  </div>	  
-		</div>
+	<ul class="nav nav-tabs" id="checkTab">
+	  <li class="active"><a href="#tabcity" data-toggle="tab">City</a></li>
+	  <li><a href="#tabzip" data-toggle="tab">Zip</a></li>	  
+	</ul>
+	 
+	<div class="tab-content">
+	  <div class="tab-pane fade active in" id="tabcity">
+	  	<form class="form-inline">
+  			<label for="citylist">Select your city</label>
+				<select id="citylist" type="text" class="input-large" placeholder="City"></select>
+			  <button type="submit" class="btn" onClick="checkStatusByCity()">Check!</button>
+			</form>	
+	  </div>
+	  <div class="tab-pane fade" id="tabzip">
+	  	<form class="form-inline">
+  			<label>Enter zip code</label>
+				<input id="zipcode" type="text" class="input-large" placeholder="Zip"></input>
+			  <button type="submit" class="btn" onClick="checkStatusByZip()">Check!</button>
+			</form>
+	  </div>	  
 	</div>
 
 	<select id="zipcodelist" name="zipcodelist" size="0"  style="visibility:hidden;"></select>
