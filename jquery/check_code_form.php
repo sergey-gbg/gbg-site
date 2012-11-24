@@ -75,7 +75,7 @@
 				zip_status_msg = "Sorry, we have no information about zip code you entered";
 
 				for (i = 0; i < table_data.length; i++){
-					if (table_data[i]["zip"].indexOf(zipcode) =! -1) {
+					if (table_data[i]["zip"].indexOf(zipcode) != -1) {
 						zip_status_msg = "In effect since " + table_data[i]["date"];
 						city_status_msg = table_data[i]["city"];
 						break;
@@ -96,7 +96,7 @@
 			var status_msg = "Not in effect";
 
 			for (i = 0; i < table_data.length; i++){
-				if (table_data[i]["city"] == city.toLowerCase()){
+				if (table_data[i]["city"] == city){
 					status_msg = "In effect since " + table_data[i]["date"];
 					break;
 				}
