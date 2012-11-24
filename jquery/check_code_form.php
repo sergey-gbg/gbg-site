@@ -19,8 +19,7 @@
 		function loadTable() {
 
 			var status = new Array();
-			<?
-				$data = getDataFromFile('CityStatus.csv', ";");
+			<?$data = getDataFromFile('CityStatus.csv', ";");
 				$i = 0;
 				foreach ($data as $value){?>
 					
@@ -29,7 +28,7 @@
 					status[<?=$i;?>]["zip"]="<?=$value[1];?>";
 					status[<?=$i;?>]["date"]="<?=$value[2];?>";
 					<?$i = $i + 1;?>
-				}
+				<?}?>
 			return status;
 
 		}
