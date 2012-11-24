@@ -20,7 +20,7 @@
 
 			var status = new Array();
 			<?
-				$data = getDataFromFile('CityStatus.csv');
+				$data = getDataFromFile('CityStatus.csv', ";");
 				$i = 0;
 				foreach ($data as $value){?>
 					
