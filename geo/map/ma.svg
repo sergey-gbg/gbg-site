@@ -4,9 +4,9 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
-   width="296.67001"
-   height="185.33"
-   viewBox="12.711167 456.56707 296.66855 185.3288"
+   width="320.67001"
+   height="200.33"
+   viewBox="12.711167 456.56707 320.66855 200.3288"
    style="background: #FCFCF8"
    id="svg2">
   
@@ -28,8 +28,13 @@
       </feMerge>
     </filter>
 <filter id="drop-shadow"> 
-    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>    
-    <feOffset in="blur" dx="0.5" dy="0.5" result="offsetBlur"/>    
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.3" result="blur"/>    
+    <feOffset in="blur" dx="0.05" dy="0.05" result="offsetBlur"/>   
+    <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
+                          specularExponent="20" lighting-color="#bbbbbb"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting> 
     <feMerge>     
         <feMergeNode in="offsetBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -51,7 +56,7 @@
      id="title4">Libre Map Project</title>
   <g 
      transform="matrix(10,0,0,-10,-113.90036,5207.0666)"
-     filter="url(#drops-hadow)"
+     filter="url(#drop-shadow)"
      id="g6">
     <g
        id="townships"

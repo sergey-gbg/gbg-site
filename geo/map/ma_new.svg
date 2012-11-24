@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="296.67001" height="185.33" viewBox="12.711167 456.56707 296.66855 185.3288" style="background: #FCFCF8" id="svg2">
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="320.67001" height="200.33" viewBox="12.711167 456.56707 320.66855 200.3288" style="background: #FCFCF8" id="svg2">
   
   <defs>
     <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
@@ -17,8 +17,11 @@
       </feMerge>
     </filter>
 <filter id="drop-shadow"> 
-    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>    
-    <feOffset in="blur" dx="0.5" dy="0.5" result="offsetBlur"/>    
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.3" result="blur"/>    
+    <feOffset in="blur" dx="0.05" dy="0.05" result="offsetBlur"/>   
+    <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20" lighting-color="#bbbbbb" result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting> 
     <feMerge>     
         <feMergeNode in="offsetBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -37,7 +40,7 @@
   </defs>
       
   <title id="title4">Libre Map Project</title>
-  <g transform="matrix(10,0,0,-10,-113.90036,5207.0666)" filter="url(#drops-hadow)" id="g6">
+  <g transform="matrix(10,0,0,-10,-113.90036,5207.0666)" filter="url(#drop-shadow)" id="g6">
     <g id="townships" style="fill:none;stroke:#000;stroke-width:0.015;stroke-linecap:round">
       <path d="M 34.740973,460.76167 L 34.801396,460.68136 L 34.82232,460.55988 L 34.814796,460.51709 L 34.813108,460.50749 L 34.812919,460.50641 L 34.808546,460.50833 L 34.747889,460.53498 L 34.745353,460.5361 L 34.744336,460.53798 L 34.685022,460.64797 L 34.678288,460.66046 L 34.678243,460.66054 L 34.72568,460.75443 L 34.734015,460.77092 L 34.740973,460.76167 z" id="?Fairhaven" style="fill:#f7f7c7;stroke-dasharray:none"/>
       <path d="M 33.898511,466.8048 L 33.966262,466.83756 L 33.966262,466.83756 L 33.995575,466.67135 L 33.995575,466.67135 L 33.995946,466.66907 L 33.995946,466.66907 L 33.997019,466.66244 L 34.011737,466.58212 L 34.035181,466.44826 L 34.06393,466.40453 L 34.103033,466.34584 L 34.158494,466.26663 L 34.158494,466.26663 L 34.067825,466.24533 L 33.902376,466.2102 L 33.871574,466.20202 L 33.799866,466.17811 L 33.664032,466.13679 L 33.664032,466.13679 L 33.659583,466.15912 L 33.668412,466.2189 L 33.668541,466.22446 L 33.668541,466.22446 L 33.662515,466.25015 L 33.662515,466.25015 L 33.654156,466.28256 L 33.643629,466.3639 L 33.629029,466.37646 L 33.626211,466.39764 L 33.64414,466.42166 L 33.64414,466.42166 L 33.634476,466.433 L 33.526671,466.41507 L 33.526671,466.41507 L 33.476614,466.40334 L 33.476614,466.40334 L 33.467244,466.46245 L 33.459007,466.53485 L 33.452504,466.575 L 33.452504,466.575 L 33.45029,466.5825 L 33.45029,466.5825 L 33.628388,466.66978 L 33.628388,466.66978 L 33.659379,466.68683 L 33.715418,466.71442 L 33.850891,466.78131 L 33.877792,466.79388 L 33.897123,466.80413 L 33.897734,466.80442 L 33.897734,466.80442 L 33.898511,466.8048 z" id="Abington" style="fill:#f7f7c7;stroke-dasharray:none"/>
