@@ -70,9 +70,12 @@
 
           var form_info_city = document.getElementById("geo-city").innerHTML;
           var form_info_status = document.getElementById("code-info").innerHTML;
+          var citylist = frameDoc.forms["checkcodeform"]["citylist"];
+          var city = form_info_city.replace(", MA", "");
 
-          frameDoc.getElementById("geo-city").innerHTML = form_info_city.replace(", MA", "");
+          frameDoc.getElementById("geo-city").innerHTML = city;
           frameDoc.getElementById("code-info").innerHTML = form_info_status;
+          citylist.value = city;
           
     			//Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');

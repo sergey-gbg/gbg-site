@@ -39,16 +39,9 @@
 			
 			var citylist = document.forms["checkcodeform"]["citylist"];
 			var city_msg = document.getElementById("geo-city");
-			var selected;
 
 			for (i = 0; i < table_data.length; i++){
-				if (table_data[i]["city"] == city_msg.innerHTML){
-					selected = true;
-				}
-				else{
-					selected = false;
-				}
-				citylist.options[i] = new Option(table_data[i]["city"], table_data[i]["city"], selected, selected); 		
+				citylist.options[i] = new Option(table_data[i]["city"]); 		
 			}			
 			
 		}
