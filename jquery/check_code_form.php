@@ -51,7 +51,6 @@
 		
 			var form = document.forms["checkcodeform"];
 			
-			var city = form["citylist"].value;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var citylist = document.getElementById("citylist");
@@ -79,7 +78,7 @@
 							zip_status_msg = "In effect since " + table_data[i]["date"];
 						}
 						city_status_msg = table_data[i]["city"];
-						citylist.value = city_status_msg;
+						citylist.selectedIndex = i;
 						break;
 					}
 				}				
@@ -92,7 +91,8 @@
 		
 		function checkStatusByCity(){
 		
-			var city = document.forms["checkcodeform"]["citylist"].value;
+			var citylist = document.forms["checkcodeform"]["citylist"];
+			var city = citylist.options[citylist.selectedIndex].text;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var status_msg = "Not in effect";
