@@ -71,7 +71,7 @@
           var form_info_city = document.getElementById("geo-city").innerHTML;
           var form_info_status = document.getElementById("code-info").innerHTML;
 
-          if (form_info_city) != "City Not Found"{
+          if (form_info_city != "City Not Found"){
             frameDoc.getElementById("geo-city").innerHTML = form_info_city.replace(", MA", "");
             frameDoc.getElementById("code-info").innerHTML = form_info_status;
           }
