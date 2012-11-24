@@ -45,7 +45,7 @@ text_info = ''
 count = 0
 towns_data.each do |row|
   next if row =~ /^[A-Z]{1}$/ || row =~ /Top of page/ || row.empty? ||
-     row =~ /archaic/i || row =~ /extinct/i || row =~ /a.k.a/i 
+     row =~ /archaic/i || row =~ /extinct/i || row =~ /a.k.a/i || row =~ /former/i 
   
   data = row.split(/ \/ /)
 
@@ -64,7 +64,7 @@ towns_data.each do |row|
 
 end
 
-File.open("CityMunicipality.csv", "w") do |f|
+File.open("../CityMunicipality.csv", "w") do |f|
   f.write text_info
 end
 
@@ -116,7 +116,7 @@ stretch_data.each do |row|
   
 end
 
-File.open("CityDate.csv", "w") do |f|
+File.open("../CityDate.csv", "w") do |f|
   f.write text_info
 end
 
@@ -154,7 +154,7 @@ end
 
 
 
-File.open("CityStatus.csv", "w") do |f|
+File.open("../CityStatus.csv", "w") do |f|
   f.write text_info_zip
 end
 

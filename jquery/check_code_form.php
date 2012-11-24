@@ -54,6 +54,7 @@
 			var city = form["citylist"].value;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
+			var citylist = document.getElementById("citylist");
 	
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
@@ -70,6 +71,7 @@
 					if (table_data[i]["zip"].indexOf(zipcode) != -1) {
 						zip_status_msg = "In effect since " + table_data[i]["date"];
 						city_status_msg = table_data[i]["city"];
+						citylist.value = city_status_msg;
 						break;
 					}
 				}				

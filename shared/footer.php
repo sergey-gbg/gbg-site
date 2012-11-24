@@ -77,12 +77,8 @@
           frameDoc.getElementById("code-info").innerHTML = form_info_status;
           citylist.value = city;
 
-          alert(citylist.length);
-          
-    			//Fade in the Popup and add close button
+          //Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
-
-
 
     			//Define margin for center alignment (vertical   horizontal) - we add 80px to the height/width to accomodate for the padding  and border width defined in the css
     			var popMargTop = ($('#' + popID).height() + 80) / 2;
