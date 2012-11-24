@@ -67,8 +67,14 @@
 
           var frame = document.getElementById("check_code_form");
           var frameDoc = frame.contentDocument || frame.contentWindow.document;
-          frameDoc.getElementById("city").innerHTML = document.getElementById("geo-city").innerHTML
-          frameDoc.getElementById("msg").innerHTML = document.getElementById("code-info").innerHTML
+
+          var form_info_city = document.getElementById("geo-city").innerHTML;
+          var form_info_status = document.getElementById("code-info").innerHTML;
+
+          if (form_info_city) != "City Not Found"{
+            frameDoc.getElementById("geo-city").innerHTML = form_info_city.replace(", MA", "");
+            frameDoc.getElementById("code-info").innerHTML = form_info_status;
+          }
 
     			//Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
@@ -96,9 +102,16 @@
 		$('a.close, #fade').live('click', function() { //When clicking on the close or fade layer...
           var frame = document.getElementById("check_code_form");
           var frameDoc = frame.contentDocument || frame.contentWindow.document;
-          document.getElementById("geo-city").innerHTML = frameDoc.getElementById("city").innerHTML;
-          document.getElementById("code-info").innerHTML = frameDoc.getElementById("msg").innerHTML;
-    			$('#fade , .popup_block').fadeOut(function() {
+
+          var form_info_city = frameDoc.getElementById("geo-city").innerHTML;
+          var form_info_status = frameDoc.getElementById("code-info").innerHTML;
+
+          if (form_info_city) != "City Not Found"{
+            document.getElementById("geo-city").innerHTML = form_info_city + ", MA";
+            document.getElementById("code-info").innerHTML = form_info_status;
+          }
+
+          $('#fade , .popup_block').fadeOut(function() {
             $('#fade, a.close').remove();  //fade them both out
     			});
     				return false;

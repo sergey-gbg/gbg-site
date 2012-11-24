@@ -44,7 +44,7 @@
         </div>            
         <div class="check_code">
             <?$city=getCityByIp(getRealIpAddr());?>
-            <div id="geo-city"><?=$city;?></div><span>, MA</span>
+            <div id="geo-city"><?=$city;?>, MA</div>
             <a href="#?w=400" rel="popup_check_code" class="poplight" style="font-size: 12px">(change)</a>
         </div>
         

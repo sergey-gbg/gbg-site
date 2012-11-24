@@ -38,7 +38,7 @@
 		function loadCitiesList() {
 			
 			var citylist = document.forms["checkcodeform"]["citylist"];
-			var city_msg = document.getElementById("city");
+			var city_msg = document.getElementById("geo-city");
 			var selected;
 
 			for (i = 0; i < table_data.length; i++){
@@ -59,13 +59,12 @@
 			var form = document.forms["checkcodeform"];
 			var zipcode = form["zipcode"].value;
 			var city = form["citylist"].value;
-			var msg = document.getElementById("msg");
+			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("city");
 	
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
-			var msg = document.getElementById("msg");
-								
+											
 			if (!zipcode) { // zipcode is empty
 				city_status_msg = "City Not Found";
  				zip_status_msg = "Please provide a zipcode!"; 				
@@ -91,8 +90,8 @@
 		function checkStatusByCity(){
 		
 			var city = document.forms["checkcodeform"]["citylist"].value;
-			var msg = document.getElementById("msg");
-			var city_msg = document.getElementById("city");
+			var msg = document.getElementById("code-info");
+			var city_msg = document.getElementById("geo-city");
 			var status_msg = "Not in effect";
 
 			for (i = 0; i < table_data.length; i++){
@@ -135,13 +134,13 @@
 
 	<div style="font-style: italic;">
 	<div style="margin-top: 10px;">
-		The Stretch Energy Code Status
+		The Stretch Energy Code Status For:
 	</div>
-	<div id="city">
+	<div id="geo-city" style: "margin-top: 5px">
 		Boston
 	</div>
 
-	<div id="msg" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
+	<div id="code-info" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
 	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66">(more)</a>
 	</div>
 </form>
