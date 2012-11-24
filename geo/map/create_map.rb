@@ -21,11 +21,17 @@ city_data.each do |row|
   zip = row.match(/^\d{5}/)
   city = row.match(/(?<=\d{5} ).*(?= \()/)
 
-  zips[zip[0]] = city[0].downcase unless zip.nil? || city.nil?
-  text_info_zip += city[0].downcase + ',' + zip[0] + "\n"
+  if !zips.key?(city[0].downcase)
+    zips[city[0].downcase] = [zip[0]]
+  else
+    zips[city[0].downcase] << zip[0]
+  end
+    
+    
 end
 
-cities = zips.values.uniq
+# puts zips.inspect
+cities = zips.keys
 links = {}
 
 #puts cities.inspect
@@ -62,11 +68,12 @@ File.open("CityMunicipality.csv", "w") do |f|
   f.write text_info
 end
 
-File.open("CityZip.csv", "w") do |f|
-  f.write text_info_zip
-end
+# File.open("CityZip.csv", "w") do |f|
+#   f.write text_info_zip
+# end
 
 text_info = ''
+text_info_zip = ''
 stretch = {}
 stretch_data = c.split(/\n/)
 stretch_data.each do |row|
@@ -86,14 +93,69 @@ stretch_data.each do |row|
 
   #.strftime("%b-%d %Y")
 
-  stretch[data[0].downcase] = {adopted: adopt, effective: eff}
+  mun = data[0].downcase
+  stretch[mun] = {adopted: adopt, effective: eff}
 
-  text_info += data[0].downcase + ',' + eff.strftime("%b-%d %Y") + "\n"
+  link = links.map{ |k,v| v==mun ? k : nil }.compact
 
+  # puts mun
+  # puts link.inspect
+  zip = []
+  zip += zips[mun] unless zips[mun].nil?
+  # puts zip.inspect
+
+  links.each do |k,v| 
+    if v == mun
+      zip += zips[k] unless zips[k].nil?
+    end
+  end
+  zip.compact
+  puts mun if zip.empty?
+
+  text_info += mun + ',' + eff.strftime("%b-%d %Y") + "\n"
+  
 end
 
 File.open("CityDate.csv", "w") do |f|
   f.write text_info
+end
+
+status = {}
+
+links.values.uniq.each do |item|
+  mun = item
+  
+  zip = []
+  zip += zips[mun] unless zips[mun].nil?
+  # puts zip.inspect
+
+  links.each do |k,v| 
+    if v == mun
+      zip += zips[k] unless zips[k].nil?
+    end
+  end
+
+  if stretch[mun]
+    data = stretch[mun][:effective].strftime("%b-%d %Y")
+  else
+    data = "none"
+  end
+  status[mun] =  zip.inspect + ';' + data + "\n"
+  
+end
+
+keys = status.keys.sort
+
+keys.each do |key|
+  text_info_zip += key + ';' + status[key]
+end
+
+
+
+
+
+File.open("CityStatus.csv", "w") do |f|
+  f.write text_info_zip
 end
 
 in_map = []

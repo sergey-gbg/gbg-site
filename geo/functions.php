@@ -94,65 +94,15 @@ function getMunicipality($city){
 }
 
 
-function getCityZipInfo(){
-	$data = getDataFromFile("CityZip.csv");
-	return $data;
-}
-
-
-
-function getDataFromFile($name){
+function getDataFromFile($name, $delimeter = ","){
 
 	$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/" . $name, "r");
-	while (($arr = fgetcsv($fd, 1024, ",")) !== FALSE) {
+	while (($arr = fgetcsv($fd, 1024, $delimeter)) !== FALSE) {
 		$data[] = $arr;
 	}
 
 	return $data;
 }
-
-
-
-
-
-
-
-//Provide an information on the city status
-function getCityStatus($city){
-// Download data from the table: city | status | effective date.
-	$arr = split(" ", $city); 
-	$city = $arr[0];
-	$info = "";		
-	$fd = fopen($_SERVER["DOCUMENT_ROOT"]."/geo/CityStatusDate.csv", "r");
-	while (($arr = fgetcsv($fd, 1024, ";")) !== FALSE) {
-		$data[] = $arr;
-	}
-	$i = 0;
-	foreach ($data as $value){
-	
-		if ($value[0] == $city){
-	
-			$info="";
-			$status = $value[2];
-			$arr = split("adopted", $status);
-			$date = $value[3];
-			$info = "". $arr[0] . "adopted Stretch Code on" . $arr[1] . ". Effective date is " . $date;
-			break;
-			
-		} 
-	}	
-	
-	return $info;
-}
-
-function getInfoByCity($city){
-
-	$info =  $city . " " . getCityStatus($city);
-	return $info;
-}
-
-
-
 
 ?>
 
