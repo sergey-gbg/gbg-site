@@ -14,7 +14,7 @@
 	
 	<script type="text/javascript">
 
-		var table_data = loadTable()
+		var table_data = loadTable();
 
 		function loadTable() {
 
