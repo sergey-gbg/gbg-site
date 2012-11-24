@@ -10,7 +10,7 @@
 	
 </head>
 
-<body id="check_code_form" onLoad="loadCitiesList(); loadZipCodes();"> 
+<body id="check_code_form" onLoad="loadCitiesList();"> 
 	
 	<script type="text/javascript">
 
@@ -25,7 +25,7 @@
 					
 					status[<?=$i;?>] = new Array("city", "zip", "date");
 					status[<?=$i;?>]["city"]="<?=$value[0];?>";
-					status[<?=$i;?>]["zip"]="<?=$value[1];?>";
+					status[<?=$i;?>]["zip"]=<?=$value[1];?>;
 					status[<?=$i;?>]["date"]="<?=$value[2];?>";
 					<?$i = $i + 1;?>
 				<?}?>
