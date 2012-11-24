@@ -24,7 +24,7 @@
 				foreach ($data as $value){?>
 					
 					status[<?=$i;?>] = new Array("city", "zip", "date");
-					status[<?=$i;?>]["city"]="<?=$value[0];?>";
+					status[<?=$i;?>]["city"]="<?=ucfirst($value[0]);?>";
 					status[<?=$i;?>]["zip"]=<?=$value[1];?>;
 					status[<?=$i;?>]["date"]="<?=$value[2];?>";
 					<?$i = $i + 1;?>
@@ -75,7 +75,7 @@
 				zip_status_msg = "Sorry, we have no information about zip code you entered";
 
 				for (i = 0; i < table_data.length; i++){
-					if (table_data[i]["zip"] == zipcode) {
+					if (table_data[i]["zip"].indexOf(zipcode) =! -1) {
 						zip_status_msg = "In effect since " + table_data[i]["date"];
 						city_status_msg = table_data[i]["city"];
 						break;
@@ -96,9 +96,9 @@
 			var status_msg = "Not in effect";
 
 			for (i = 0; i < table_data.length; i++){
-				if (table_data[i]["city"] == city){
+				if (table_data[i]["city"] == city.toLowerCase()){
 					status_msg = "In effect since " + table_data[i]["date"];
-					return status_msg;
+					break;
 				}
 			}
 
