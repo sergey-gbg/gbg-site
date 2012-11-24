@@ -96,7 +96,7 @@
 			var status_msg = "Not in effect";
 
 			for (i = 0; i < table_data.length; i++){
-				if (table_data[i]["city"] == city){
+				if (table_data[i]["city"] == city && table_data[i]["date"] != "none"){
 					status_msg = "In effect since " + table_data[i]["date"];
 					break;
 				}
