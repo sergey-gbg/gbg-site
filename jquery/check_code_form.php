@@ -5,7 +5,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="/jquery/bootstrap/bootstrap.min.css" type="text/css">
-	<script src="/jquery/bootstrap/jquery.js" type="text/javascript"></script>
+	<script src="/jquery/jquery.js" type="text/javascript"></script>
 	<script src="/jquery/bootstrap/bootstrap-tab.js" type="text/javascript"></script>
 	
 </head>
@@ -60,7 +60,7 @@
 			var zipcode = form["zipcode"].value;
 			var city = form["citylist"].value;
 			var msg = document.getElementById("code-info");
-			var city_msg = document.getElementById("city");
+			var city_msg = document.getElementById("geo-city");
 	
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
