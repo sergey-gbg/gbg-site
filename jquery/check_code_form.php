@@ -57,15 +57,14 @@
 			var citylist = document.getElementById("citylist");
 			var zipcode = document.getElementById("zipcode");
 
-			zipcode.classList.remove('alert-danger');
-	
+			
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
 											
-			if (!zipcode.innerHTML.match(/\d{5}/) ) { // zipcode is not valid
+			if (!zipcode.value.match(/\d{5}/) ) { // zipcode is not valid
 				city_status_msg = "City Not Found";
  				zip_status_msg = "Zipcode is not valid!";
- 				zipcode.classList.add('alert-danger');				
+ 							
 			} 
 			else 
 			{
@@ -94,7 +93,6 @@
 			var status_msg = "Not in effect";
 
 			var zipcode = document.getElementById("zipcode");
-			zipcode.classList.remove('alert-danger');
 
 			for (i = 0; i < table_data.length; i++){
 				if (table_data[i]["city"] == city && table_data[i]["date"] != "none"){
