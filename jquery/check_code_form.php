@@ -62,7 +62,7 @@
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
 											
-			if (!zipcode.match(/\d{5}/) ) { // zipcode is not valid
+			if (!zipcode.innerHTML.match(/\d{5}/) ) { // zipcode is not valid
 				city_status_msg = "City Not Found";
  				zip_status_msg = "Zipcode is not valid!";
  				zipcode.classList.add('alert-danger');				
