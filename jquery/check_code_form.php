@@ -72,7 +72,7 @@
 
 				for (i = 0; i < table_data.length; i++){
 					if (table_data[i]["zip"].indexOf(zipcode.value) != -1) {
-						if (&& table_data[i]["date"] == "none"){
+						if (table_data[i]["date"] == "none"){
 							zip_status_msg = "Not in effect";	
 						}
 						else {
