@@ -50,12 +50,13 @@
 		function checkStatusByZip(){
 		
 			var form = document.forms["checkcodeform"];
-			var zipcode = form["zipcode"].value;
+			
 			var city = form["citylist"].value;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var citylist = document.getElementById("citylist");
-			
+			var zipcode = document.getElementById("zipcode");
+
 			zipcode.classList.remove('alert-danger');
 	
 			var city_status_msg = "City Not Found";
@@ -71,7 +72,7 @@
 				zip_status_msg = "Sorry, we have no information about zip code you entered";
 
 				for (i = 0; i < table_data.length; i++){
-					if (table_data[i]["zip"].indexOf(zipcode) != -1) {
+					if (table_data[i]["zip"].indexOf(zipcode.innerHTML) != -1) {
 						zip_status_msg = "In effect since " + table_data[i]["date"];
 						city_status_msg = table_data[i]["city"];
 						citylist.value = city_status_msg;
