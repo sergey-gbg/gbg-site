@@ -73,9 +73,9 @@
           var citylist = frameDoc.getElementById("citylist");
           var city = form_info_city.replace(", MA", "");
 
-          frameDoc.getElementById("geo-city").text = city;
-          frameDoc.getElementById("code-info").text = form_info_status;
-          citylist.text = city;
+          frameDoc.getElementById("geo-city").innerHTML = city;
+          frameDoc.getElementById("code-info").innerHTML = form_info_status;
+          citylist.value = city;
 
           //Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
@@ -106,8 +106,8 @@
           var form_info_status = frameDoc.getElementById("code-info").innerHTML;
 
           if (form_info_city != "City Not Found"){
-            document.getElementById("geo-city").text = form_info_city + ", MA";
-            document.getElementById("code-info").text = form_info_status;
+            document.getElementById("geo-city").innerHTML = form_info_city + ", MA";
+            document.getElementById("code-info").innerHTML = form_info_status;
           }
 
           $('#fade , .popup_block').fadeOut(function() {

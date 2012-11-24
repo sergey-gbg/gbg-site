@@ -51,7 +51,7 @@
 		
 			var form = document.forms["checkcodeform"];
 			
-			var city = form["citylist"].text;
+			var city = form["citylist"].value;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var citylist = document.getElementById("citylist");
@@ -61,7 +61,7 @@
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
 											
-			if (!zipcode.text.match(/\d{5}/) ) { // zipcode is not valid
+			if (!zipcode.value.match(/\d{5}/) ) { // zipcode is not valid
 				city_status_msg = "City Not Found";
  				zip_status_msg = "Zipcode is not valid!";
  							
@@ -71,7 +71,7 @@
 				zip_status_msg = "Sorry, we have no information about zip code you entered";
 
 				for (i = 0; i < table_data.length; i++){
-					if (table_data[i]["zip"].indexOf(zipcode.text) != -1) {
+					if (table_data[i]["zip"].indexOf(zipcode.value) != -1) {
 						if (table_data[i]["date"] == "none"){
 							zip_status_msg = "Not in effect";	
 						}
@@ -79,20 +79,20 @@
 							zip_status_msg = "In effect since " + table_data[i]["date"];
 						}
 						city_status_msg = table_data[i]["city"];
-						citylist.text = city_status_msg;
+						citylist.value = city_status_msg;
 						break;
 					}
 				}				
 			}
 			
-			msg.text  = zip_status_msg;
-			city_msg.text = city_status_msg;
+			msg.innerHTML  = zip_status_msg;
+			city_msg.innerHTML = city_status_msg;
 			
 		}
 		
 		function checkStatusByCity(){
 		
-			var city = document.forms["checkcodeform"]["citylist"].text;
+			var city = document.forms["checkcodeform"]["citylist"].value;
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var status_msg = "Not in effect";
@@ -102,13 +102,13 @@
 			for (i = 0; i < table_data.length; i++){
 				if (table_data[i]["city"] == city && table_data[i]["date"] != "none"){
 					status_msg = "In effect since " + table_data[i]["date"];
-					zipcode.text = table_data[i]["zip"][0];
+					zipcode.value = table_data[i]["zip"][0];
 					break;
 				}
 			}
 
-			msg.text = status_msg;
-			city_msg.text = city;
+			msg.innerHTML = status_msg;
+			city_msg.innerHTML = city;
 		}
 					
 	</script>
