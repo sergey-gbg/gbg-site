@@ -5,19 +5,20 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    width="320.67001"
-   height="200.33"
-   viewBox="12.711167 456.56707 320.66855 200.3288"
+   height="220.33"
+   viewBox="2.711167 446.56707 320.66855 220.3288"
    style="background: #FCFCF8"
    id="svg2">
   
   <defs>
     <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
       <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+      <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
       <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
                           specularExponent="20" lighting-color="#bbbbbb"  
                           result="specOut">
-        <fePointLight x="-5000" y="-10000" z="20000"/>
+        <fePointLight x="5000" y="5000" z="20000"/>
       </feSpecularLighting>
       <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
       <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
@@ -28,13 +29,9 @@
       </feMerge>
     </filter>
 <filter id="drop-shadow"> 
-    <feGaussianBlur in="SourceAlpha" stdDeviation="0.3" result="blur"/>    
-    <feOffset in="blur" dx="0.05" dy="0.05" result="offsetBlur"/>   
-    <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
-                          specularExponent="20" lighting-color="#bbbbbb"  
-                          result="specOut">
-        <fePointLight x="-5000" y="-10000" z="20000"/>
-      </feSpecularLighting> 
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.4" result="blur"/>    
+    <feOffset in="blur" dx="-0.05" dy="-0.05" result="offsetBlur"/>   
+
     <feMerge>     
         <feMergeNode in="offsetBlur"/>
         <feMergeNode in="SourceGraphic"/>
