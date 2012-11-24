@@ -120,7 +120,7 @@ var animateOut = function(){
 $("#mem1").hover( animateIn, animateOut );
 $("#mem2").hover( animateIn, animateOut );
 $("#mem3").hover( animateIn, animateOut );
-$("#mem").hover( animateIn, animateOut );
+$("#mem4").hover( animateIn, animateOut );
 
 // ### Functionality for changing bios
 $('#member1').click( function (){

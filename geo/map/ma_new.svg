@@ -18,7 +18,7 @@
       </feMerge>
     </filter>
 <filter id="drop-shadow"> 
-    <feGaussianBlur in="SourceAlpha" stdDeviation="0.4" result="blur"/>    
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.2" result="blur"/>    
     <feOffset in="blur" dx="-0.05" dy="-0.05" result="offsetBlur"/>   
 
     <feMerge>     
