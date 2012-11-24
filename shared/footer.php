@@ -44,7 +44,7 @@
               src="/jquery/check_code_form.php"  
               width="99%"
               frameborder="0"
-              height="220px"
+              height="225px"
               marginheight="0"
               marginwidth="0"
 			  >

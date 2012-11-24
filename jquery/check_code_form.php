@@ -55,13 +55,16 @@
 			var msg = document.getElementById("code-info");
 			var city_msg = document.getElementById("geo-city");
 			var citylist = document.getElementById("citylist");
+			
+			zipcode.classList.remove('alert-danger');
 	
 			var city_status_msg = "City Not Found";
 			var zip_status_msg = "";
 											
-			if (!zipcode) { // zipcode is empty
+			if (!zipcode.match(/\d{5}/) ) { // zipcode is not valid
 				city_status_msg = "City Not Found";
- 				zip_status_msg = "Please provide a zipcode!"; 				
+ 				zip_status_msg = "Zipcode is not valid!";
+ 				zipcode.classList.add('alert-danger');				
 			} 
 			else 
 			{
@@ -89,6 +92,9 @@
 			var city_msg = document.getElementById("geo-city");
 			var status_msg = "Not in effect";
 
+			var zipcode = document.getElementById("zipcode");
+			zipcode.classList.remove('alert-danger');
+
 			for (i = 0; i < table_data.length; i++){
 				if (table_data[i]["city"] == city && table_data[i]["date"] != "none"){
 					status_msg = "In effect since " + table_data[i]["date"];
@@ -112,7 +118,7 @@
 	 
 	<div class="tab-content">
 	  <div class="tab-pane fade active in" id="tabcity">
-	  	<label for="citylist">Select your city</label>
+	  	<label for="citylist">Select city</label>
 	  	<div class="form-inline">
   			<select id="citylist" type="text" style="margin-bottom: 0px" placeholder="City"></select>
 			  <a href="#" class="btn" onClick="checkStatusByCity()">Check!</a>
@@ -131,7 +137,7 @@
 	<div style="margin-top: 10px;">
 		The Stretch Energy Code Status For:
 	</div>
-	<div id="geo-city" style: "margin-top: 5px">
+	<div id="geo-city" style="margin: 5px 0px 5px 0px">
 		Boston
 	</div>
 
