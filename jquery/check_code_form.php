@@ -102,7 +102,7 @@
 				}
 			}
 
-			msg.innerHTML = checkCityStatus(city);
+			msg.innerHTML = status_msg;
 			city_msg.innerHTML = city;
 		}
 					
@@ -127,7 +127,7 @@
 	  <div class="tab-pane fade" id="tabzip">
 	  	<label>Enter zip code</label>
 	  	<div class="form-inline">
-  			<input id="zipcode" type="text" class="input-medium" placeholder="Zip"></input>
+  			<input id="zipcode" type="text" placeholder="Zip"></input>
 			  <a href="#" class="btn" onClick="checkStatusByZip()">Check!</a>
 			</div>
 	  </div>	  
