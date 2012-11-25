@@ -114,6 +114,10 @@
 
 			return false;
 		}
+
+		function closeWindow(){
+			parent.window.location.href='/homeowners/';
+		}
 					
 	</script>
 
@@ -130,14 +134,14 @@
 	  	<label for="citylist">Select city</label>
 	  	<div class="form-inline">
   			<select id="citylist" type="text" style="margin-bottom: 0px" placeholder="City"></select>
-			  <a href="#" class="btn" onClick="checkStatusByCity()">Check!</a>
+			  <a href="#" class="btn" onClick="return checkStatusByCity()">Check!</a>
 			</div>	
 	  </div>
 	  <div class="tab-pane fade" id="tabzip">
 	  	<label>Enter zip code</label>
 	  	<div class="form-inline">
   			<input id="zipcode" type="text" placeholder="Zip"></input>
-			  <a href="#" class="btn" onClick="checkStatusByZip()">Check!</a>
+			  <a href="#" class="btn" onClick="return checkStatusByZip()">Check!</a>
 			</div>
 	  </div>	  
 	</div>
@@ -151,7 +155,7 @@
 	</div>
 
 	<div id="code-info" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
-	<a href="/homeowners/" class="poplight" style="font-size: 12px;color: #66cc66">(more)</a>
+	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66" onClick="closeWindow()">(more)</a>
 	</div>
 </form>
 
