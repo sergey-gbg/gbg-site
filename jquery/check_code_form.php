@@ -117,7 +117,10 @@
 
 		function closeWindow(){
 			parent.$('a.close, #fade').click();
-			parent.window.location.href='/homeowners/';
+
+			if (parent.window.location.href !='/homeowners/'){
+				parent.window.location.href='/homeowners/';
+			}
 			return false;
 		}
 					
