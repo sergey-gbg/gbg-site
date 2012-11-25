@@ -116,7 +116,9 @@
 		}
 
 		function closeWindow(){
+			parent.$('a.close, #fade').click();
 			parent.window.location.href='/homeowners/';
+			return false;
 		}
 					
 	</script>
@@ -155,7 +157,7 @@
 	</div>
 
 	<div id="code-info" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
-	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66" onClick="closeWindow()">(more)</a>
+	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66" onClick="return closeWindow()">(more)</a>
 	</div>
 </form>
 
