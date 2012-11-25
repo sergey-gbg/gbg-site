@@ -117,7 +117,7 @@
 
 		function closeWindow(){
 			parent.$('a.close, #fade').click();
-			parent.$('a.poplight, #contact-link').click();
+			parent.$('a#contact-link').click();
 			
 			return false;
 		}
