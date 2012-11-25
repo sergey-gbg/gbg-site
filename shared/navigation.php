@@ -31,7 +31,7 @@
 
 		<div class="contact">	
 			<span class="phone"> 617-418-1444 </span>
-			<span class="email"><a href="#?w=495" rel="popup_contact" class="poplight">Contact Us</a></span>
+			<span class="email"><a href="#?w=495" rel="popup_contact" class="poplight" id="contact-link">Contact Us</a></span>
 		</div>
 		
 		
