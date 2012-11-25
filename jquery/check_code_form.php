@@ -43,7 +43,7 @@
 			for (i = 0; i < table_data.length; i++){
 				citylist.options[i] = new Option(table_data[i]["city"]); 		
 			}			
-			
+			return false;
 		}
 		
 		
@@ -86,6 +86,8 @@
 			
 			msg.innerHTML  = zip_status_msg;
 			city_msg.innerHTML = city_status_msg;
+
+			return false;
 			
 		}
 		
@@ -109,6 +111,8 @@
 
 			msg.innerHTML = status_msg;
 			city_msg.innerHTML = city;
+
+			return false;
 		}
 					
 	</script>
@@ -147,7 +151,7 @@
 	</div>
 
 	<div id="code-info" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
-	<a href="#" class="poplight" style="font-size: 12px;color: #66cc66">(more)</a>
+	<a href="/homeowners/" class="poplight" style="font-size: 12px;color: #66cc66">(more)</a>
 	</div>
 </form>
 
