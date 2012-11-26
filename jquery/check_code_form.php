@@ -18,6 +18,9 @@
 
 		function loadTable() {
 
+			// initialize status for link "more"
+			$('#morelink').attr('rel', "clicked-false");
+
 			var status = new Array();
 			<?$data = getDataFromFile('CityStatus.csv', ";");
 				$i = 0;
@@ -116,8 +119,8 @@
 		}
 
 		function closeWindowAndOpenContacts(){
-			parent.$('#fade').click();
-			$('#morelink').attr('rel', "clicked-true")
+			$('#morelink').attr('rel', "clicked-true");
+			parent.$('#fade').click();			
 			return false;
 		}
 					
