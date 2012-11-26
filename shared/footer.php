@@ -72,7 +72,10 @@
             var form_info_city = document.getElementById("geo-city").innerHTML;
             var form_info_status = document.getElementById("code-info").innerHTML;
             var citylist = frameDoc.getElementById("citylist");
+
             var city = form_info_city.replace(", MA", "");
+
+            frameDoc.getElementById('morelink').setAttribute('rel', 'clicked-false');
 
             frameDoc.getElementById("geo-city").innerHTML = city;
             frameDoc.getElementById("code-info").innerHTML = form_info_status;
@@ -121,11 +124,8 @@
             $('#fade, a.close').remove();  //fade them both out
     			});
 
-          alert(morelink);
-          alert(morelink == 'clicked-true');
-
           if (morelink == 'clicked-true') {
-            $('contact-link').click();
+            $('#contact-link').click();
           }
     			
           return false;
