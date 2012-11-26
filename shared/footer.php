@@ -112,8 +112,6 @@
 
           var morelink = frameDoc.getElementById("morelink").getAttribute('rel');
 
-         
-
           if (form_info_city != "City Not Found"){
             document.getElementById("geo-city").innerHTML = form_info_city + ", MA";
             document.getElementById("code-info").innerHTML = form_info_status;
@@ -122,6 +120,8 @@
           $('#fade , .popup_block').fadeOut(function() {
             $('#fade, a.close').remove();  //fade them both out
     			});
+
+          alert(morelink);
 
           if (morelink == 'clicked-true') {
             $('contact-link').click();
