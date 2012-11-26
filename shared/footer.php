@@ -80,7 +80,7 @@
             citylist.value = city; 
 
           }
-
+          alert(popID + popWidth);
           //Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
 
