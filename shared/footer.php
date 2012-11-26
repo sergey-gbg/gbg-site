@@ -110,6 +110,10 @@
           var form_info_city = frameDoc.getElementById("geo-city").innerHTML;
           var form_info_status = frameDoc.getElementById("code-info").innerHTML;
 
+          var morelink = frameDoc.$("morelink").attr('rel');
+
+          alert(morelink);
+
           if (form_info_city != "City Not Found"){
             document.getElementById("geo-city").innerHTML = form_info_city + ", MA";
             document.getElementById("code-info").innerHTML = form_info_status;
@@ -118,7 +122,8 @@
           $('#fade , .popup_block').fadeOut(function() {
             $('#fade, a.close').remove();  //fade them both out
     			});
-    				return false;
+    			
+          return false;
 		});
 	});
 	
