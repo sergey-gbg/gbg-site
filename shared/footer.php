@@ -110,7 +110,7 @@
           var form_info_city = frameDoc.getElementById("geo-city").innerHTML;
           var form_info_status = frameDoc.getElementById("code-info").innerHTML;
 
-          var morelink = frameDoc.$("morelink").attr('rel');
+          var morelink = frameDoc.getElementById("morelink").getAttribute('rel');
 
           alert(morelink);
 
