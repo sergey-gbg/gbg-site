@@ -62,20 +62,24 @@
     			var query= popURL.split('?');
     			var dim= query[1].split('&');
     			var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-				
-				//alert(document.getElementById("citylist").value);
 
-          var frame = document.getElementById("check_code_form");
-          var frameDoc = frame.contentDocument || frame.contentWindow.document;
 
-          var form_info_city = document.getElementById("geo-city").innerHTML;
-          var form_info_status = document.getElementById("code-info").innerHTML;
-          var citylist = frameDoc.getElementById("citylist");
-          var city = form_info_city.replace(", MA", "");
+          if (popID == "popup_check_code") {
 
-          frameDoc.getElementById("geo-city").innerHTML = city;
-          frameDoc.getElementById("code-info").innerHTML = form_info_status;
-          citylist.value = city;
+            var frame = document.getElementById("check_code_form");
+            var frameDoc = frame.contentDocument || frame.contentWindow.document;
+
+            var form_info_city = document.getElementById("geo-city").innerHTML;
+            var form_info_status = document.getElementById("code-info").innerHTML;
+            var citylist = frameDoc.getElementById("citylist");
+            var city = form_info_city.replace(", MA", "");
+
+            frameDoc.getElementById("geo-city").innerHTML = city;
+            frameDoc.getElementById("code-info").innerHTML = form_info_status;
+            // doesn't work in ie7
+            citylist.value = city; 
+
+          }
 
           //Fade in the Popup and add close button
     			$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/images/close_button.png" class="btn_close" title="Close Window" alt="Close" /></a>');
