@@ -87,18 +87,18 @@
     			//Define margin for center alignment (vertical   horizontal) - we add 80px to the height/width to accomodate for the padding  and border width defined in the css
     			var popMargTop = ($('#' + popID).height() + 80) / 2;
     			var popMargLeft = ($('#' + popID).width() + 80) / 2;
-          alert(1);
+
     			//Apply Margin to Popup
     			$('#' + popID).css({
         		'margin-top' : -popMargTop,
         		'margin-left' : -popMargLeft
     			});
-          alert(2);
+
     			//Fade in Background
     			$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-          alert(3);
+
 				  $('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
-          alert(4);
+
     			return false;
 		});
 

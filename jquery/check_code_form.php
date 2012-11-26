@@ -116,7 +116,7 @@
 		}
 
 		function closeWindow(){
-			parent.$('a.close, #fade').click();
+			parent.$('#fade').click();
 			parent.$('a#contact-link').click();			
 			return false;
 		}
