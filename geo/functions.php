@@ -22,31 +22,38 @@ function getRealIpAddr()
 //Define user's city by his IP 
 function getCityByIp($ipaddress)
 {
-	$city = "";
-	$license_key = "hKrySYTmrhso";
-	$query = "http://geoip.maxmind.com/f?l=" . $license_key . "&i=" . $ipaddress;
-	$url = parse_url($query);
-	$host = $url["host"];
-	$path = $url["path"] . "?" . $url["query"];
-	$timeout = 1;
-	$fp = fsockopen ($host, 80, $errno, $errstr, $timeout)
-			or die('Can not open connection to server.');
-	if ($fp) {
-	  fputs ($fp, "GET $path HTTP/1.0\nHost: " . $host . "\n\n");
-	  while (!feof($fp)) {
-		$buf .= fgets($fp, 128);
-	  }
-	  $lines = explode("\n", $buf);
-	  $data = $lines[count($lines)-1];
-	  $arr = split(",", $data); 
 
-		$city = $arr[2];
-	  fclose($fp);
-	}
+	session_start();
+	
+	$city = $_SESSION["geo-city"];
 
-	$city = getMunicipality($city);
+	if ($city.empty()) {
+		$license_key = "t02mRhn5IlI6";
+		$query = "http://geoip.maxmind.com/f?l=" . $license_key . "&i=" . $ipaddress;
+		$url = parse_url($query);
+		$host = $url["host"];
+		$path = $url["path"] . "?" . $url["query"];
+		$timeout = 1;
+		$fp = fsockopen ($host, 80, $errno, $errstr, $timeout)
+				or die('Can not open connection to server.');
+		if ($fp) {
+		  fputs ($fp, "GET $path HTTP/1.0\nHost: " . $host . "\n\n");
+		  while (!feof($fp)) {
+			$buf .= fgets($fp, 128);
+		  }
+		  $lines = explode("\n", $buf);
+		  $data = $lines[count($lines)-1];
+		  $arr = split(",", $data); 
 
-	if(empty($city)) $city="Boston";
+			$city = $arr[2];
+		  fclose($fp);
+		}
+
+		$city = getMunicipality($city);
+		if(empty($city)) $city="Boston";
+
+		$_SESSION["geo-city"] = $city;
+	}	
 	
 	return $city;
 	
