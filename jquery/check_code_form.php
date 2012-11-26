@@ -157,7 +157,7 @@
 	</div>
 
 	<div id="code-info" style="font-size:15px;color:#0099cc;font-weight: bold;">No information avaliable</div>
-	<a href="#" id="morelink" rel="clicked-false" class="poplight" style="font-size: 12px;color: #66cc66" onClick="return closeWindowAndOpenContacts()">(more)</a>
+	<a href="#" id="morelink" rel="clicked-false" class="poplight" style="visibility: hidden; font-size: 12px;color: #66cc66" onClick="return closeWindowAndOpenContacts()">(more)</a>
 	</div>
 </form>
 
