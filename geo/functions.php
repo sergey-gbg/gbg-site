@@ -27,7 +27,7 @@ function getCityByIp($ipaddress)
 	
 	$city = $_SESSION["geo-city"];
 
-	if ($city.empty()) {
+	if (empty($city)) {
 		$license_key = "t02mRhn5IlI6";
 		$query = "http://geoip.maxmind.com/f?l=" . $license_key . "&i=" . $ipaddress;
 		$url = parse_url($query);
