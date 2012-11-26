@@ -122,6 +122,7 @@
     			});
 
           alert(morelink);
+          alert(morelink == 'clicked-true');
 
           if (morelink == 'clicked-true') {
             $('contact-link').click();
