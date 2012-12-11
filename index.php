@@ -4,29 +4,25 @@
 
 	<!-- Header -->
     <?php include($_SERVER["DOCUMENT_ROOT"]."/shared/header.php"); ?>
-	
-	<!-- ### list of scripts for geotargeting -->
-	<? include_once($_SERVER["DOCUMENT_ROOT"]."/geo/functions.php"); ?>
-	  
-	
+
     <!-- ### Page Title ### -->
     <title>Greater Boston Green || Energy Efficiency, HERS Ratings and Energy Star Partner</title>
 
      </head>
     <!-- End Header -->
 		
-	<body id="mainform" >
-	
+	<body>
+
 		<div class="container">
 			
 			<!-- Site Navigation -->
 			<?php include($_SERVER["DOCUMENT_ROOT"]."/shared/navigation.php"); ?>		
 
 			<div class="right" id="fadehome">
-			
-				<div class="grey" > 
-					<img src="/images/thehomepage2.png" alt="Massachusetts Energy Star Efficiency" style="margin: 0px 0px 30px 0px; " >
 				
+				<div class="grey"> 
+					<img src="/images/thehomepage2.png" alt="Massachusetts Energy Star Efficiency" style="margin: 60px 0px 30px 0px;" >
+					
 					<!--	
 					<div id="homeslide" class="pics">
 						
@@ -41,11 +37,10 @@
 					</div> -->
 
 			
-					<br style="clear:both;" />
+				<br style="clear:both;" />
 				</div> <!-- end div.grey -->
-					
-								
-	<div class="tagline" style="margin:30px 0 40px 0;"><h1>We are an <img src="/images/spark2.png" alt="" style="margin: -6px 6px 0px 0px;" >partner collaborating
+				
+	<div class="tagline"><h1>We are an <img src="/images/spark2.png" alt="" style="margin: -6px 6px 0px 0px;" >partner collaborating
 						with architects, builders and homeowners in and around Boston to achieve all of your energy
 						efficiency goals.</h1></div>
 <div class="tagline"><h1>RESNET certified. We do HERS energy ratings. </h1></div>

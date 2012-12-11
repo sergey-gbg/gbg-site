@@ -10,7 +10,7 @@
 	
 </head>
 
-<body id="check_code_form" onLoad="loadCitiesList();"> 
+<body id="check_code_form" onLoad="loadCitiesList();" style="background-color: #FCFCF8"> 
 	
 	<script type="text/javascript">
 
