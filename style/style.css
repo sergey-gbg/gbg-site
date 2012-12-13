@@ -927,3 +927,52 @@ table.checkcodeform
 	border-collapse:collapse;
 	margin-top: 10px;
 }
+/*** navigation ***/
+
+.left-navigation{
+	margin: 0px 20px 0px 0px;
+    width: 342px;
+    float:left;
+    background-color:#FCFCF8; 
+    border: 0;
+    height: 11px;
+	display: block;	
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+}
+
+.left-navigation .buttons {
+	float: left;
+    margin: 0 0 0 50px;	
+}
+.left-navigation .buttons .home {
+    background: url("../images/design/home.gif") no-repeat scroll center center transparent;
+    display: block;
+    float: left;
+    height: 11px;
+    margin: 0 9px;
+    width: 11px;
+}
+.left-navigation .buttons .letter {
+    background: url("../images/design/letter.gif") no-repeat scroll center center transparent;
+    display: block;
+    float: left;
+    height: 11px;
+    margin: 0 9px;
+    width: 11px;
+}
+.left-navigation .buttons .map {
+    background: url("../images/design/map.gif") no-repeat scroll center center transparent;
+    display: block;
+    float: left;
+    height: 11px;
+    margin: 0 9px;
+    width: 11px;
+}
+.left-navigation .buttons .spacer {
+    background: none repeat scroll 0 0 	#0099CC;
+    float: left;
+    height: 13px;
+    width: 2px;
+}

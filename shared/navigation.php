@@ -55,6 +55,16 @@
 
 </div> <!-- end div.left -->
 
+<div class="left-navigation">
+	<div class="buttons">	
+		<a class="home" href="/"></a>
+		<div class="spacer"></div>
+		<a href="#?w=495" rel="popup_contact" class="letter poplight"></a>
+		<div class="spacer"></div>
+		<a class="map" href="/sitemap.html"></a>
+	</div>
+</div>
+
 <!-- Client Login and Logo -->
 <div class="right_header">
   <a href="https://gbg.affinitylive.com/extranet" target="_blank" id="logina">
